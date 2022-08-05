@@ -8,10 +8,12 @@
     <p>
       {{ project.description }}
     </p>
+    <div class="used-tech">
       <small>Technologies used: </small>
       <small v-for="item in project.stack" :key="item">
         <i>{{ item }}</i>
       </small>
+    </div>
       <br>
       <button v-if="project.link">
           <nuxt-link :to="`${ project.link }`" target="#">

@@ -4,20 +4,136 @@
    url(~/assets/Montserrat-Medium.otf) format("truetype");
 }
 
+@font-face {
+  font-family: "Karrik";
+  src: local("Karrik"),
+   url(~/assets/Karrik-Regular.woff2) format("truetype");
+}
+
 // variables
 $blue: #3787ff;
 $orange: #ff8818;
+$gradient1: linear-gradient(135deg,rgba(0,0,0,0.8), rgba(0,0,0,1));
+$gradient2: linear-gradient(130deg, rgba(0, 0, 0, .95), rgba(0, 0, 0, 0.8));
+$gradient_white: linear-gradient(125deg, rgba(255,255,255, 0.8), rgba(255,255,255, 1));
+$gradient_grey: linear-gradient(135deg, rgba(0,0,0, 0.2), rgba(0,0,0, .4));
 
-body {
+// CSS RESET
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption {
   margin: 0;
   padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  background: transparent;
+}
+// END RESET
+
+hr {
+  border-bottom: 2px solid black;
+}
+
+// give this type of class a name
+// classes that do a simple thing
+.text-center {
+  display: block;
+  margin: auto;
+  text-align: center;
+  width: 100%;
+}
+
+// LANDING PAGE
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: black;
+}
+#welcome {
+  text-decoration: none;
+  color: #fff;
+  font-size: 2em;
   font-family: 'Montserrat';
 }
+// END OF LANDING PAGE
+
+// MAIN CSS
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Karrik';
+  scroll-behavior: smooth;
+}
+
+.welcome {
+  height: 100%;
+
+}
+
 .main {
   max-width: 840px;
   margin: auto;
   text-align: center;
 }
+
+.header {
+  background: linear-gradient(10deg, $blue 40%, rgba(55,135,255,0.5));
+  margin: auto;
+  padding: 48px 0;
+  // color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  h1, h3 {
+    padding: 6px;
+    font-family: 'Montserrat';
+    text-align: center;
+  }
+  .about {
+    max-width: 840px;
+    padding: 24px;
+    text-align: left;
+    margin: 140px auto;
+    font-family: 'Montserrat';
+    @media (max-width: 840px) {
+      margin: 140px 32px;
+    }
+  }
+  .first-link {
+    text-decoration: none;
+    button {
+      background: $gradient1;
+      color: #fff;
+      display: block;
+      margin: 48px auto;
+      min-width: 120px;
+      height: auto;
+      font-size: 1.4em;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      &:hover {
+        cursor: pointer;
+      }
+      div {
+        height: 100%;
+        border-radius: 5px;
+        padding: 8px;
+        font-family: 'Montserrat';
+      }
+    }
+  }
+}
+#header-wave {
+  overflow: hidden;
+  max-width: 100%;
+  margin-top: -1px;
+  svg path{
+    width: 100%;
+  }
+  fill: $blue;
+}
+
 .project-grid {
   padding-left: 0;
   text-align: left;
@@ -26,22 +142,27 @@ body {
   grid-gap: 48px;
   @media (max-width: 840px) {
       grid-template-columns: 1fr;
+      margin: 0 32px;
   }
 }
-.about {
-  text-align: left;
-  max-width: 80%;
-  margin: auto;
-}
 .grid-title {
-  margin: 48px 0;
+  margin: 96px 0 48px 0;
+  text-transform: uppercase;
+  font-size: 1.4em;
+  letter-spacing: 1px;
+  font-family: 'Montserrat';
+  &:nth-child(1) {
+    margin-top: 0;
+    padding-top: 24px;
+  }
 }
+
 .project-item {
+  position: relative;
   list-style-type: none;
   text-align: left;
   padding: 24px;
-  background: linear-gradient(130deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.8));
-  box-shadow: 0 0 12px black;
+  background: $gradient2;
   color: white;
   border-radius: 10px;
   // animation
@@ -60,58 +181,168 @@ body {
           height: 100%;
           margin: 0;
           display: inline-block;
+          font-family: 'Montserrat';
       }
   }
-  a {
-      text-decoration: none;
+  .used-tech {
+    padding-top: 12px;
+  }
+  button {
+    position: absolute;
+    bottom: -20px;
+    display: inline-block;
+    width: 140px;
+    background: linear-gradient(270deg, $blue 40%, rgba(55,135,255,0.7));
+    color: #000;
+    font-weight: 700;
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 6px 6px 12px black;
+    // animation
+    transition: .5s ease-out;
+    a {
+        color: #fff;
+        text-shadow: 0 0 5px #000;
+        text-decoration: none;
+    }
+    &:hover {
+        color: #fff;
+        // animation
+        transition: .5s ease-out;
+        transform: scale(1.05);
+        animation: AnimationName 3s infinite;
+    }
   }
 }
-button {
-  display: inline-block;
-  width: 140px;
-  background: $orange;
-  color: #000;
-  font-weight: 700;
-  padding: 8px;
-  border-radius: 5px;
-  border: none;
-  box-shadow: 6px 6px 12px black;
-  margin-top: 12px;
-  // animation
-  transition: .5s ease-out;
-  a {
-      color: #fff;
+.technologies {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-row-gap: 24px;
+  @media (max-width: 840px) {
+    grid-template-columns: 1fr;
   }
-  &:hover {
-      color: #fff;
-      // animation
-      transition: .5s ease-out;
-      transform: scale(1.2);
+  .tech {
+    background: $gradient1;
+    color: #fff;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 12px;
+    @media (max-width: 840px) {
+      margin: 12px 32px;
+    }
+    .tech-title {
+      text-align: left;
+      margin: 12px;
+      font-family: 'Montserrat';
+      color: $blue;
+    }
+    .tech-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-bottom: 12px;
+      .tech-item {
+        text-align: left;
+        padding: 3px 12px;
+      }
+    }
   }
-}
-footer {
-min-height: 120px;
-display: grid;
-grid-template-columns: 1fr 2fr 1fr;
-color: #fff;
-font-weight: 700;
-h2 {
-  grid-column: 2;
-  text-align: center;
-}
-.contact-info {
-  grid-column: 1;
-  bottom: 0;
-  ul {
-    list-style-type: none;
-  }
-}
 }
 
-// animation
-.css-selector {
-  background: $blue;
+// FOOTER
+#footer-wave {
+  margin-bottom: -60px;
+  max-width: 100%;
+  fill: $blue;
 }
+footer {
+height: 260px;
+display: flex;
+color: #fff;
+line-height: 1.5em;
+background: linear-gradient(185deg, $blue 40%, rgba(55,135,255,0.6));
+
+vertical-align: text-bottom;
+justify-content: center;
+text-align: center;
+  .contact-info {
+    align-self: flex-end;
+    padding: 24px;
+    list-style-type: none;
+    .contact-text-block {
+      max-width: 180px;
+      margin: auto;
+    }
+  }
+  .socials {
+    list-style-type: none;
+    margin: 12px 0;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 5px;
+    width: 100%;
+    li {
+      a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 4px 16px;
+        text-decoration: none;
+        }
+    }
+  }
+}
+// END OF FOOTER
+
+// HOVER GRADIENT TRANSITION
+.w-to-b-gradient {
+  position: relative;
+  background: $gradient_white;
+  float: left;
+  z-index: 1;
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-image: $gradient_grey;
+    z-index: -1;
+    transition: opacity 0.5s linear;
+    opacity: 0;
+    border-radius: 5px;
+  }
+  &:hover::before {
+    opacity: 1;
+  }
+}
+.b-to-w-gradient {
+  position: relative;
+  // background: $gradient2;
+  float: left;
+  z-index: 1;
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-image: $gradient_white;
+    z-index: -1;
+    transition: opacity 0.5s linear;
+    opacity: 0;
+    border-radius: 5px;
+  }
+  &:hover::before {
+    opacity: 1;
+  }
+}
+// END OF HOVER GRADIENT TRANSITION
+
+
+// ANIMATIONS
 @-webkit-keyframes AnimationName {
   0%{background-position:0% 39%}
   50%{background-position:100% 62%}
@@ -128,9 +359,12 @@ h2 {
   100%{background-position:0% 39%}
 }
 
-// footer
-svg {
-  max-width: 100%;
-  margin-bottom: -28px;
-  fill: $blue;
+// PAGE TRANSITIONS
+.page-enter-active,
+.page-leave-active {
+  transition: opacity .8s;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
 }

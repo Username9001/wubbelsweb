@@ -1,0 +1,1 @@
+import{_ as o,o as s,c as a,w as e,T as n,a as c,b as _,d as r}from"./entry-9da53c68.mjs";const l={},d=_("p",{class:"rule"},"WubbelsWeb",-1);function i(p,u,f,x,m,b){const t=r;return s(),a(n,null,{default:e(()=>[c(t,{to:"/portfolio",id:"welcome",class:"flex-center"},{default:e(()=>[d]),_:1})]),_:1})}var h=o(l,[["render",i]]);export{h as default};

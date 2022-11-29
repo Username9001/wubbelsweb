@@ -61,7 +61,7 @@ export default {
     return {
       personalia: {
         name: 'Erik Wubbels',
-        description: 'Hello and welcome to my portfolio website/CV. Here you can find several of my highlighted projects that I worked on the past few years. If you are intrigued and would like to know more, feel free to contact me.',
+        description: 'My name is Erik Wubbels, and I’m a web developer from Eindhoven, The Netherlands. I specialize in interactive design, and am currently open for new projects and opportunities. Feel free to check out my previous endeavors down below, and be sure to reach out if you want to know more about me or my work.',
         email: 'erik.wubbels@gmail.com',
       },
       live_projects: [

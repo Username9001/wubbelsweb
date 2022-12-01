@@ -79,11 +79,13 @@ body, html {
 }
 
 .header {
-  background: linear-gradient(10deg, $blue 40%, rgba(55,135,255,0.5));
+  background: linear-gradient(45deg, #000 40%, rgba(255, 255, 255, 1));
+  background-size: 400% 400%;
   margin: auto;
   padding: 48px 0;
   // color: rgba(0, 0, 0, 0.8);
   color: #fff;
+  // animation: gradient 8s ease infinite;
   h1, h3 {
     padding: 6px;
     font-family: 'Montserrat';
@@ -357,6 +359,19 @@ text-align: center;
   0%{background-position:0% 39%}
   50%{background-position:100% 62%}
   100%{background-position:0% 39%}
+}
+
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 // PAGE TRANSITIONS

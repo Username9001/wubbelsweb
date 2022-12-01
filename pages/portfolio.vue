@@ -17,35 +17,29 @@
           </button>
         </a>
       </div>
-      <div id="header-wave">
+      <!-- <div id="header-wave">
         <svg viewBox="0 0 2200 120" width="2200" height="120" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><path d="M0 68L21.5 69.2C43 70.3 86 72.7 129.2 74.2C172.3 75.7 215.7 76.3 258.8 73.5C302 70.7 345 64.3 388.2 62.8C431.3 61.3 474.7 64.7 517.8 61.2C561 57.7 604 47.3 647 48.2C690 49 733 61 776.2 65.2C819.3 69.3 862.7 65.7 905.8 63.7C949 61.7 992 61.3 1035.2 62.3C1078.3 63.3 1121.7 65.7 1164.8 67.7C1208 69.7 1251 71.3 1294.2 72.8C1337.3 74.3 1380.7 75.7 1423.8 77.5C1467 79.3 1510 81.7 1553 74.3C1596 67 1639 50 1682.2 46.2C1725.3 42.3 1768.7 51.7 1811.8 56C1855 60.3 1898 59.7 1941.2 56.5C1984.3 53.3 2027.7 47.7 2070.8 51.2C2114 54.7 2157 67.3 2178.5 73.7L2200 80L2200 0L2178.5 0C2157 0 2114 0 2070.8 0C2027.7 0 1984.3 0 1941.2 0C1898 0 1855 0 1811.8 0C1768.7 0 1725.3 0 1682.2 0C1639 0 1596 0 1553 0C1510 0 1467 0 1423.8 0C1380.7 0 1337.3 0 1294.2 0C1251 0 1208 0 1164.8 0C1121.7 0 1078.3 0 1035.2 0C992 0 949 0 905.8 0C862.7 0 819.3 0 776.2 0C733 0 690 0 647 0C604 0 561 0 517.8 0C474.7 0 431.3 0 388.2 0C345 0 302 0 258.8 0C215.7 0 172.3 0 129.2 0C86 0 43 0 21.5 0L0 0Z" stroke-linecap="round" stroke-linejoin="miter"></path></svg>
-      </div>
+      </div> -->
       <div id="main" class="main">
           <h3 class="grid-title">
-            Live websites
+            Projects
             <hr>
           </h3>
+          <ul class="options">
+            <input v-model="grid_filter_live" type="checkbox">
+            <label for="grid_filter_live">Live</label>
+            <input v-model="grid_filter_old" type="checkbox">
+            <label for="grid_filter_live">Old</label>
+            <input v-model="grid_filter_personal" type="checkbox">
+            <label for="grid_filter_live">Personal</label>
+          </ul>
           <ul class="project-grid">
-              <Project v-for="project in live_projects" :key="project.title" :project="project" />
+              <Project v-if="grid_filter_live" v-for="project in live_projects" :key="project.title" :project="project" />
+              <Project v-if="grid_filter_personal" v-for="project in personal_projects" :key="project.title" :project="project" />
+              <Project v-if="grid_filter_old" v-for="project in old_projects" :key="project.title" :project="project" />
           </ul>
           <h3 class="grid-title">
-            Personal Projects
-            <hr>
-          </h3>
-          <ul class="project-grid">
-              <Project v-for="project in personal_projects" :key="project.title" :project="project" />
-          </ul>
-          <h3 class="grid-title">
-            Past Projects
-            <small>(no longer available)</small>
-            <hr>
-          </h3>
-          <ul class="project-grid">
-              <Project v-for="project in old_projects" :key="project.title" :project="project" />
-          </ul>
-          <br>
-          <h3 class="grid-title">
-            Accustomed with the following technologies:
+            Accustomed with the following technologies
             <hr>
           </h3>
           <Technologies :technologies="technologies" />
@@ -139,6 +133,10 @@ export default {
           ],
         }
       },
+      // GRID FILTER
+      grid_filter_live: true,
+      grid_filter_old: true,
+      grid_filter_personal: true,
     }
   }
 }

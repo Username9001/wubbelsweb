@@ -259,10 +259,12 @@ body, html {
 }
 footer {
 height: 260px;
+margin-top: 180px;
 display: flex;
 color: #fff;
 line-height: 1.5em;
-background: linear-gradient(185deg, $blue 40%, rgba(55,135,255,0.6));
+// background: linear-gradient(185deg, $blue 40%, rgba(55,135,255,0.6));
+background: #000;
 
 vertical-align: text-bottom;
 justify-content: center;

@@ -11,7 +11,7 @@
     <div class="used-tech">
       <small>Technologies used: </small>
       <small v-for="item in project.stack" :key="item">
-        <i>{{ item }}</i>
+        <i>{{ item }}&nbsp;</i>
       </small>
     </div>
       <br>

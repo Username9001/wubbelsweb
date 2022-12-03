@@ -14,6 +14,9 @@
         <i>{{ item }}&nbsp;</i>
       </small>
     </div>
+    <div class="img-container">
+      <img src="https://via.placeholder.com/600x338" alt="">
+    </div>
       <br>
       <button v-if="project.link">
           <nuxt-link :to="`${ project.link }`" target="#">

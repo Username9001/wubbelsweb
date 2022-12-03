@@ -5,24 +5,25 @@
       <div id="main" class="main">
           <h3 class="grid-title">
             Projects
-            <hr>
           </h3>
           <!-- PROJECT LOOKUP -->
           <div class="search-wrapper">
             <!-- STACK OPTIONS SEARCH -->
+            <!-- <h4>Select technology</h4> -->
             <div class="stack-list">
-              <label v-for="stack in stack_options" class="stack-options">
+              <label v-for="stack in stack_options" class="stack-option">
                 <input :value="`${ stack }`" v-model="stack_search" type="radio" name="radio-button" id="">
-                {{ stack }}
+                <span>
+                  {{ stack }}
+                </span>
               </label>
             </div>
             <!-- TEXT SEARCH -->
-            <h4>Enter search text</h4>
-            <input type="text" v-model="search" placeholder="Search title.."/>
-            <h4>Select technology</h4>
+            <!-- <h4>Search for project</h4> -->
+            <input class="text-search" type="search" v-model="search" placeholder="Search for project.."/>
           </div>
-          <h3 v-if="combinedFilter.length">
-            Used in {{ combinedFilter.length }} Project(s)
+          <h3 class="counter" v-if="(combinedFilter.length)">
+            {{ combinedFilter.length }} Project<ins v-if="(combinedFilter.length > 1)">s</ins>
           </h3>
 
           <div class="project-grid">
@@ -46,7 +47,7 @@ export default {
   data() {
     return {
       search: '',
-      stack_search: [],
+      stack_search: 'All Projects',
       search_method: 'title',
       // compareArray: [],
       stack_options: [
@@ -56,7 +57,9 @@ export default {
         'Laravel',
         'SASS',
         'TypeScript',
-        'WooCommerce'
+        'WooCommerce',
+        'Raspberry Pi',
+        'Arduino',
       ],
       personalia: {
         name: 'Erik Wubbels',

@@ -10,9 +10,11 @@
     </p>
     <div class="used-tech">
       <small>Technologies used: </small>
-      <small v-for="item in project.stack" :key="item">
-        <i>{{ item }}&nbsp;</i>
-      </small>
+      <div class="stack-list">
+        <small v-for="item in project.stack" :key="item">
+          <i>{{ item }}&nbsp;</i>
+        </small>
+      </div>
     </div>
     <div class="img-container">
       <img src="https://via.placeholder.com/600x338" alt="">
@@ -32,5 +34,11 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+.stack-list {
+  max-width: 100%;
+  small {
+    display: inline-block;
+  }
+}
 </style>

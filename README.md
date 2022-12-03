@@ -5,7 +5,7 @@
 - Add email hotlink
 - socials in footer
 
-## Project filters
+## Current Project filters
 - Wordpress
 - VueJS/NuxtJS
 - Laravel
@@ -14,3 +14,20 @@
 - MySQL
 - MongoDB
 - GraphQL
+
+## Revised Project filters
+<!-- Use multiple layers  -->
+
+#### Front End
+- VueJS/NuxtJS
+
+#### Back End
+- Wordpress
+- Laravel
+
+#### Helpful Tools
+- SASS
+- TypeScript
+- WooCommerce
+- GraphQL
+- MongoDB

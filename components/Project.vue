@@ -1,13 +1,18 @@
 <template>
   <li class="project-item">
-    <div class="project-header">
+    <!-- MARKDOWN TESTING -->
+    <!-- <ContentDoc :path="`projects/${ project.slug }`" class="text-left" /> -->
+    <!-- END OF MARKDOWN TESTING -->
+    <!-- <div class="project-header">
         <h2 class="project-title">
           {{ project.title}}
         </h2>
-    </div>
-    <p>
+    </div> -->
+    <!-- MARKDOWN -->
+    <ContentDoc :path="`projects/${ project.slug }`" class="text-left" />
+    <!-- <p>
       {{ project.description }}
-    </p>
+    </p> -->
     <div class="used-tech">
       <small>Technologies used: </small>
       <div class="stack-list">
@@ -30,7 +35,7 @@
 
 <script>
 export default {
-  props: ['project']
+  props: ['project'],
 }
 </script>
 

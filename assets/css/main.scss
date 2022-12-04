@@ -18,6 +18,8 @@
 
 // variables
 $blue: #3787ff;
+$light-blue: #8ebbff;
+$blue-gradient: linear-gradient(135deg, $blue, $light-blue);
 $orange: #ff8818;
 $gradient1: linear-gradient(135deg,rgba(0,0,0,0.8), rgba(0,0,0,1));
 $gradient2: linear-gradient(130deg, rgba(0, 0, 0, .95), rgba(0, 0, 0, 0.8));
@@ -169,9 +171,9 @@ body, html {
       width: auto;
       span {
         padding: 12px;
-        background-color: rgb(148, 148, 148);
-        color: #fff;
-        border-radius: 12px 12px 0 0;
+        background: $gradient2;
+        color: white;
+        border-radius: 12px;
       }
       label {
         text-align: left;
@@ -180,7 +182,7 @@ body, html {
         display: none;
       }
       input[type="radio"]:checked ~ *{
-        background-color: rgb(255, 187, 0);
+        background: $blue-gradient;
         color: #fff;
       }
     }

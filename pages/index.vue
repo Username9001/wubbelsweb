@@ -11,6 +11,13 @@
             <!-- STACK OPTIONS SEARCH -->
             <!-- <h4>Select technology</h4> -->
             <div class="stack-list">
+              <label class="stack-option">
+                <input type="radio" value="All Projects" v-model="stack_search" name="radio-button" id="">
+                <span>
+                  All Projects
+                </span>
+              </label>
+              <!-- <br> -->
               <label v-for="stack in stack_options" class="stack-option">
                 <input :value="`${ stack }`" v-model="stack_search" type="radio" name="radio-button" id="">
                 <span>
@@ -28,7 +35,7 @@
 
           <div class="project-grid">
             <TransitionGroup name="list">
-              <Project v-for="project in combinedFilter" :key="project.title" :project="project" />
+              <Project v-for="project in combinedFilter" :key="project.slug" :project="project" />
             </TransitionGroup>
           </div>
           <h3 class="grid-title">
@@ -51,15 +58,16 @@ export default {
       search_method: 'title',
       // compareArray: [],
       stack_options: [
-        'All Projects',
         'Wordpress',
         'VueJS/NuxtJS',
         'Laravel',
         'SASS',
         'TypeScript',
+        'Docker',
         'WooCommerce',
         'Raspberry Pi',
         'Arduino',
+        'Processing'
       ],
       personalia: {
         name: 'Erik Wubbels',
@@ -68,56 +76,47 @@ export default {
       },
       all_projects: [
         {
-          title: 'Erik Wubbels Fotografie',
+          slug: 'erik-wubbels-fotografie',
           link: ' https://erikwubbels.nl',
           stack: ['Wordpress', 'SASS', 'WooCommerce'],
-          description: 'Web design and development for festival in the Netherlands, made with Wordpress and SASS.'
         },
         {
-          title: 'Misty Fields 2022',
+          slug: 'misty-fields-2022',
           link: ' https://mistyfields.com',
           stack: ['Wordpress', 'SASS'],
-          description: 'Web design and development for festival in the Netherlands, made with Wordpress and SASS.'
         },
         {
-          title: 'Misty Fields 2019',
+          slug: 'misty-fields-2019',
           link: ' https://mistyfields.com',
           stack: ['Wordpress', 'SASS'],
-          description: 'Web design and development for festival in the Netherlands, made with Wordpress and SASS.'
         },
         {
-          title: 'TomsTech',
+          slug: 'tomstech',
           link: ' https://tomstech.nl',
           stack: ['Wordpress', 'SASS'],
-          description: 'Web development for a technology journalist. The design was made through co-designing sessions. Made with Wordpress and SASS.'
         },
         {
-          title: 'Pineapple Productions',
+          slug: 'pineapple-productions',
           link: ' https://pp.wubbelsweb.com',
           stack: ['Wordpress', 'SASS'],
-          description: 'Web development for a technology journalist. The design was made through co-designing sessions. Made with Wordpress and SASS.'
         },
         {
-          title: 'Bootleg Breathing',
+          slug: 'bootleg-breathing',
           link: ' https://bb.wubbelsweb.com',
           stack: ['VueJS/NuxtJS', 'Bootstrap', 'SASS'],
-          description: 'A free alternative to the Wim Hof Method app for guided breathing. Made in NuxtJS.'
         },
         {
-          title: 'Plant DB',
+          slug: 'plant-db',
           link: ' https://plantnet.wubbelsweb.com/species',
           stack: ['VueJS/NuxtJS', 'Bootstrap', 'SASS', 'Laravel', 'GraphQL', 'MongoDB'],
-          description: 'A planning app for plants in the garden. Early development. Frontend in NuxtJS/VueJS, backend in Laravel and a MongoDB database, interfaced with GraphQL.'
         },
         {
-          title: 'Bits of Freedom',
+          slug: 'bits-of-freedom',
           stack: ['Bootstrap', 'Vanilla JS', 'SASS'],
-          description: 'New design and development for a campaign page relating to privacy restrictions.'
         },
         {
-          title: 'DAGDice',
+          slug: 'dagdice',
           stack: ['Adobe XD', 'VueJS/NuxtJS', 'GraphQL', 'TypeScript'],
-          description: 'A betting side for cryptocurrencies. I made the frontend in NuxtJS, with GraphQL. As this was a fairly large project, also integrated Typescript.'
         },
       ],
       technologies: {
@@ -157,21 +156,7 @@ export default {
       },
     }
   },
-  // GRID FILTER
-  // methods: {
-  //   toggleStack(input) {
-  //     if (this.stack_search.includes(input)) {
-  //       this.stack_search = this.stack_search.filter(e => e !== input)
-  //       console.log("input: ", input)
-  //       console.log("search array: ", this.stack_search)
-  //       return
-  //     }
-  //     this.stack_search.push(input)
-  //     console.log("input: ", input)
-  //     console.log("search array: ", this.stack_search)
-  //     return
-  //   }
-  // },
+
   computed: {
     combinedFilter() {
       // First check whether input is text or button
@@ -180,49 +165,13 @@ export default {
 
       // Return final array of projects matching the filter
       if (this.search === '' && this.stack_search === 'All Projects') return this.all_projects
-      if (this.search !== '' && this.stack_search === 'All Projects') return this.all_projects.filter(project => project.title.toLowerCase().includes(this.search.toLowerCase()) )
+      if (this.search !== '' && this.stack_search === 'All Projects') return this.all_projects.filter(project => project.slug.toLowerCase().includes(this.search.toLowerCase()) )
       return this.all_projects.filter(
         project => 
           project.stack.includes(this.stack_search) 
-          && project.title.toLowerCase().includes(this.search.toLowerCase())
+          && project.slug.toLowerCase().includes(this.search.toLowerCase())
       )
-      // // Show all products 
-      // if (this.stack_search.includes('All Projects')) {
-      //   return this.all_projects
-      // } 
-      // // All products but search is not empty
-      // else if (!this.stack_search.includes('All Projects')) {
-      //   var project_array = []
-      //   var final_array = []
-      //   // loop through stack_search array
-      //   for ( let i = 0; i < this.stack_search.length; i++ ) {
-      //     // filter projects
-      //     var filtered_project = this.all_projects.filter( project =>
-      //       project.stack.includes(this.stack_search[i])
-      //     )
-      //     console.log("filtered projects:", filtered_project)
-      //     // compare projects to existing array
-      //     if ( !project_array.includes(filtered_project) ) {
-      //       project_array.push(filtered_project)
-      //     }
-      //     console.log("project array right now:", project_array)
-      //     // push all projects
-      //     for ( let j = 0; j < project_array[0].length; j++ ) {
-      //       final_array.push(project_array[0][j])
-      //     }
-      //   }
-      //   // return list
-      //   console.log('final array:',final_array)
-      //   return final_array
-      // }
     },
-    // alternate approach
-    // using button values
-    techFilter(tech) {
-      if ( tech ) {
-        console.log(tech)
-      }
-    }
   }
 }
 </script>

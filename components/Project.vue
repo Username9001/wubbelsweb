@@ -1,18 +1,8 @@
 <template>
-  <li class="project-item">
-    <!-- MARKDOWN TESTING -->
-    <!-- <ContentDoc :path="`projects/${ project.slug }`" class="text-left" /> -->
-    <!-- END OF MARKDOWN TESTING -->
-    <!-- <div class="project-header">
-        <h2 class="project-title">
-          {{ project.title}}
-        </h2>
-    </div> -->
+  <li class="project-item" @click="projectHighlight">
     <!-- MARKDOWN -->
-    <ContentDoc :path="`projects/${ project.slug }`" class="text-left" />
-    <!-- <p>
-      {{ project.description }}
-    </p> -->
+    <ContentDoc v-if="project" :path="`projects/${ project.slug }`" class="project-header" />
+    <!-- END OF MARKDOWN -->
     <div class="used-tech">
       <small>Technologies used: </small>
       <div class="stack-list">
@@ -22,12 +12,12 @@
       </div>
     </div>
     <div class="img-container">
-      <img src="https://via.placeholder.com/600x338" alt="">
+      <img :src="`${ project.img }`" alt="">
     </div>
       <br>
       <button v-if="project.link">
           <nuxt-link :to="`${ project.link }`" target="#">
-            Visit {{ project.title }}
+            Visit {{ project.name }}
           </nuxt-link>
       </button>
   </li>
@@ -36,6 +26,11 @@
 <script>
 export default {
   props: ['project'],
+  methods: {
+    projectHighlight() {
+      console.log( "Hello" )
+    }
+  }
 }
 </script>
 

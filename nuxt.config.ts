@@ -29,7 +29,7 @@ export default defineNuxtConfig({
           // href: '/_nuxt/assets/fonts/Montserrat.ttf',
           // production
           // rel: 'preload',
-          href: 'fonts/Montserrat.ttf',
+          href: 'https://pftest.wubbbelsweb.com/fonts/Montserrat.ttf',
           as: 'font',
           type: 'font/ttf',
           // importance: 'high',
@@ -40,7 +40,7 @@ export default defineNuxtConfig({
           // href: '/_nuxt/assets/fonts/Karrik-Regular.woff2',
           // production
           // rel: 'preload',
-          href: 'fonts/Karrik-Regular.woff2',
+          href: 'https://pftest.wubbbelsweb.com/fonts/Karrik-Regular.woff2',
           as: 'font',
           type: 'font/woff2',
           // importance: 'high',

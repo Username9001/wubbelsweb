@@ -1,0 +1,1 @@
+import{_ as t}from"./_plugin-vue_export-helper.a1a6add7.js";import{o,a as r,r as s}from"./entry.54a337e9.js";const n={head(){return{title:"WubbelsWeb"}}};function a(e,c,l,d,p,f){return o(),r("div",null,[s(e.$slots,"default")])}const i=t(n,[["render",a]]);export{i as default};

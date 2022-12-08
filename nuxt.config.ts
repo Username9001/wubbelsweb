@@ -2,6 +2,14 @@
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
+  meta: { 
+    name: 'Demo Site',
+    description: "Some juicy description",
+    charset: 'utf-8',
+    meta: [
+      { name: 'theme-color', content: '#ffdd67' }
+    ],
+  },
   app: {
     head: {
       title: 'WubbbelsWeb',
@@ -33,6 +41,7 @@ export default defineNuxtConfig({
           importance: 'high',
           crossorigin: 'anonymous'
         },
+        { rel: 'manifest', href: '/manifest.json' }
       ]
     },
     pageTransition: { name: 'page', mode: 'out-in' }

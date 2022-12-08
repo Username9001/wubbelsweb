@@ -10,7 +10,8 @@
                     <EmailButton />
                 </section>
             </header>
-            <div class="main" id="contact">
+            <div class="main" id="contact" v-if="expanded">
+                <!-- <button :disabled="refreshing" @click="refreshAll">      Refetch All Data    </button> -->
                 <div class="markdown-box">
                     <ContentRenderer :value="data">      
                         <h1>{{ data.title }}</h1>
@@ -26,17 +27,30 @@
                     </ContentRenderer>
                 </div>
             </div>
-            <!-- <div class="main" id="contact">
-                <div class="text-block">
-                    <p>I started my journey as a programmer while studying Industrial Design. Making websites to showcase my progress and creating programs for microcontrollers.</p>
-                    <p class="second-paragraph">From there on out I branched out into web development. Over the years I have gained experience working on both frontend and backend applications.</p>
-                </div>
-            </div> -->
         </div>
     </Transition>
 </template>
 <script setup lang="ts">
+import { onMounted } from 'vue';
+
 const { data } = await useAsyncData('page-data', () => queryContent('/contact').findOne())
+
+const expanded = ref(false)
+const refreshing = ref(false)
+const refreshAll = async () => {
+  refreshing.value = true
+  try {
+    await refreshNuxtData()
+  } finally {
+    refreshing.value = false
+    expanded.value = true
+  }
+}
+
+onMounted(() => {
+    refreshAll()
+    expanded.value = false
+})
 
 defineProps({
   title: {

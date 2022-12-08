@@ -7,7 +7,7 @@
                     <h1>A short story</h1>
                     <h1>About me</h1>
                     <p></p>
-                    <NuxtLink to="#about" class="header-link">
+                    <NuxtLink @click="refreshAll" to="#about" class="header-link">
                         <button>
                             Continue reading
                         </button>
@@ -15,7 +15,8 @@
                 </section>
             </header>
             <div class="main" id="about">
-                <div class="markdown-box">
+                <!-- <button :disabled="refreshing" @click="refreshAll">      Refetch All Data    </button> -->
+                <div class="markdown-box" v-if="expanded">
                     <ContentRenderer :value="data">      
                         <h1>{{ data.title }}</h1>
                         <div class="text-top">
@@ -40,7 +41,29 @@
     </Transition>
 </template>
 <script setup lang="ts">
+import { onMounted } from 'vue';
+
 const { data } = await useAsyncData('page-data', () => queryContent('/about').findOne())
+const expanded = ref(false)
+
+const refreshing = ref(false)
+const refreshAll = async () => {
+  refreshing.value = true
+  try {
+    await refreshNuxtData()
+  } finally {
+    refreshing.value = false
+    setTimeout(() => {
+        document.getElementById("about")?.scrollIntoView
+    }, 1000);
+    expanded.value = true
+  }
+}
+
+onMounted(() => {
+    refreshAll()
+    expanded.value = false
+})
 
 defineProps({
   title: {

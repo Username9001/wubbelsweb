@@ -46,7 +46,7 @@ header {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, calc(-50% - 100px));
+    transform: translate(-50%, calc(-50% - 164px));
     width: 840px;
     // margin: 180px auto 80px auto;
     letter-spacing: 1px;

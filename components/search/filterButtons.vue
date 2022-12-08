@@ -108,23 +108,6 @@ export default {
             }
         },
     },
-    computed: {
-        countRemainingProjects() {
-            
-        }
-    },
-    // watch: {
-    //     current_filter: {
-    //         handler(newValue) {
-    //             // Note: `newValue` will be equal to `oldValue` here
-    //             // on nested mutations as long as the object itself
-    //             // hasn't been replaced.
-    //             this.checkAllStacks()
-    //         },
-    //         // deep: true,
-    //         // immediate: true
-    //     }
-    // },
     mounted() {
         this.checkAllStacks();
         this.loaded = true;

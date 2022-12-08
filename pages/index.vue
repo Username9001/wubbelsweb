@@ -16,7 +16,7 @@
             </h3>
           </div>
 
-          <div class="project-grid">
+          <div id="project-grid">
             <TransitionGroup name="list">
               <Project v-for="project in combinedFilter" :key="project.name" :project="project" />
             </TransitionGroup>
@@ -293,7 +293,7 @@ export default {
     margin: auto;
   }
 }
-.project-grid {
+#project-grid {
   max-width: 840px;
   margin: 128px auto;
   z-index: 3;

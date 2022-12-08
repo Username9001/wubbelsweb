@@ -30,7 +30,7 @@ export default {
 <style scoped lang="scss">
     nav {
         padding: 64px;
-        padding-bottom: 0;
+        // padding-bottom: 0;
         @media (max-width: 840px) {
             padding: 48px;
         }
@@ -69,10 +69,11 @@ export default {
                 a {
                     transition: .4s;
                     color: $light-blue;
+                    opacity: 0.5;
                     &.router-link-exact-active {
                     transition: .4s;
                     color: #fff;
-                    opacity: 0.95;
+                    opacity: 0.85;
                 }
                 }
             }

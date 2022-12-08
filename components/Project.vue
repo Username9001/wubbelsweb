@@ -2,7 +2,7 @@
   <div v-if="project" class="project-item" @click="projectHighlight">
     <!-- MARKDOWN -->
     <div class="project-header">
-      <ContentDoc :path="`projects/${ project.slug }`"></ContentDoc>
+      <ContentDoc v-if="project" :path="`projects/${ project.slug }`"></ContentDoc>
       <!-- END OF MARKDOWN -->
       <!-- <div class="used-tech">
         <small>Technologies used: </small>
@@ -50,7 +50,7 @@ export default {
   min-height: 720px;
   list-style-type: none;
   text-align: left;
-  padding: 48px;
+  padding: 36px 48px;
   background: $grey;
   color: white;
   min-height: 300px;
@@ -63,7 +63,7 @@ export default {
   .project-header {
       min-height: 180px;
       margin-bottom: 80px;
-      border-right: 12px solid $lightest-blue;
+      // border-right: 12px solid $lightest-blue;
       position: relative;
       h1 {
           color: $light-blue;

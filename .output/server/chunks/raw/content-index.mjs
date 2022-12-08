@@ -1,0 +1,5 @@
+// ROLLUP_NO_REPLACE 
+ const contentIndex = "{\"/about\":\"content:about.md\",\"/contact\":\"content:contact.md\",\"/\":\"content:index.md\",\"/projects/bits-of-freedom\":\"content:projects:bits-of-freedom.md\",\"/projects/bootleg-breathing\":\"content:projects:bootleg-breathing.md\",\"/projects/dagdice\":\"content:projects:dagdice.md\",\"/projects/erik-wubbels-fotografie\":\"content:projects:erik-wubbels-fotografie.md\",\"/projects/flowerscape\":\"content:projects:flowerscape.md\",\"/projects/holdie\":\"content:projects:holdie.md\",\"/projects/misty-fields-2019\":\"content:projects:misty-fields-2019.md\",\"/projects/misty-fields-2022\":\"content:projects:misty-fields-2022.md\",\"/projects/mugen\":\"content:projects:mugen.md\",\"/projects/pineapple-productions\":\"content:projects:pineapple-productions.md\",\"/projects/plant-db\":\"content:projects:plant-db.md\",\"/projects/tomstech\":\"content:projects:tomstech.md\",\"/test\":\"content:test.md\"}";
+
+export { contentIndex as default };
+//# sourceMappingURL=content-index.mjs.map

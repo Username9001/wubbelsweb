@@ -479,19 +479,19 @@ const components = {
   ).then((c) => c.default || c)),
   Counter: defineAsyncComponent(() => import(
     /* webpackChunkName: "components/counter" */
-    './_nuxt/Counter.3f7f529a.mjs'
+    './_nuxt/Counter.c0f3cf8b.mjs'
   ).then((c) => c.default || c)),
   EmailButton: defineAsyncComponent(() => import(
     /* webpackChunkName: "components/email-button" */
-    './_nuxt/EmailButton.193ba0af.mjs'
+    './_nuxt/EmailButton.24dfc532.mjs'
   ).then((c) => c.default || c)),
   Header: defineAsyncComponent(() => import(
     /* webpackChunkName: "components/header" */
-    './_nuxt/Header.461973e8.mjs'
+    './_nuxt/Header.02bc8a2f.mjs'
   ).then((c) => c.default || c)),
   Project: defineAsyncComponent(() => import(
     /* webpackChunkName: "components/project" */
-    './_nuxt/Project.3b97ba8a.mjs'
+    './_nuxt/Project.13e1c692.mjs'
   ).then((c) => c.default || c)),
   ProjectExtendedSlot: defineAsyncComponent(() => import(
     /* webpackChunkName: "components/project-extended-slot" */
@@ -515,7 +515,7 @@ const components = {
   ).then((c) => c.default || c)),
   LayoutNav: defineAsyncComponent(() => import(
     /* webpackChunkName: "components/layout-nav" */
-    './_nuxt/Nav.98d5ea3f.mjs'
+    './_nuxt/Nav.3f034eea.mjs'
   ).then((c) => c.default || c)),
   ProjectsListing: defineAsyncComponent(() => import(
     /* webpackChunkName: "components/projects-listing" */
@@ -531,31 +531,31 @@ const components = {
   ).then((c) => c.default || c)),
   ContentDoc: defineAsyncComponent(() => import(
     /* webpackChunkName: "components/content-doc" */
-    './_nuxt/ContentDoc.66ab35d7.mjs'
+    './_nuxt/ContentDoc.4f52821a.mjs'
   ).then((c) => c.default || c)),
   ContentList: defineAsyncComponent(() => import(
     /* webpackChunkName: "components/content-list" */
-    './_nuxt/ContentList.edd3388d.mjs'
+    './_nuxt/ContentList.fa06ff8a.mjs'
   ).then((c) => c.default || c)),
   ContentNavigation: defineAsyncComponent(() => import(
     /* webpackChunkName: "components/content-navigation" */
-    './_nuxt/ContentNavigation.f78e3cd3.mjs'
+    './_nuxt/ContentNavigation.2e7a9cb8.mjs'
   ).then((c) => c.default || c)),
   ContentQuery: defineAsyncComponent(() => import(
     /* webpackChunkName: "components/content-query" */
-    './_nuxt/ContentQuery.e94505d1.mjs'
+    './_nuxt/ContentQuery.8f49035e.mjs'
   ).then((c) => c.default || c)),
   ContentRenderer: defineAsyncComponent(() => import(
     /* webpackChunkName: "components/content-renderer" */
-    './_nuxt/ContentRenderer.1dde7a3f.mjs'
+    './_nuxt/ContentRenderer.29675a40.mjs'
   ).then((c) => c.default || c)),
   ContentRendererMarkdown: defineAsyncComponent(() => import(
     /* webpackChunkName: "components/content-renderer-markdown" */
-    './_nuxt/ContentRendererMarkdown.25e1e074.mjs'
+    './_nuxt/ContentRendererMarkdown.298c7a19.mjs'
   ).then((c) => c.default || c)),
   ContentSlot: defineAsyncComponent(() => import(
     /* webpackChunkName: "components/content-slot" */
-    './_nuxt/ContentSlot.1b783137.mjs'
+    './_nuxt/ContentSlot.1cd4af3e.mjs'
   ).then((c) => c.default || c)),
   DocumentDrivenEmpty: defineAsyncComponent(() => import(
     /* webpackChunkName: "components/document-driven-empty" */
@@ -567,11 +567,11 @@ const components = {
   ).then((c) => c.default || c)),
   Markdown: defineAsyncComponent(() => import(
     /* webpackChunkName: "components/markdown" */
-    './_nuxt/Markdown.bb9d01da.mjs'
+    './_nuxt/Markdown.6cf8bd89.mjs'
   ).then((c) => c.default || c)),
   ProseA: defineAsyncComponent(() => import(
     /* webpackChunkName: "components/prose-a" */
-    './_nuxt/ProseA.ac1e0e1d.mjs'
+    './_nuxt/ProseA.096553e3.mjs'
   ).then((c) => c.default || c)),
   ProseBlockquote: defineAsyncComponent(() => import(
     /* webpackChunkName: "components/prose-blockquote" */
@@ -591,27 +591,27 @@ const components = {
   ).then((c) => c.default || c)),
   ProseH1: defineAsyncComponent(() => import(
     /* webpackChunkName: "components/prose-h1" */
-    './_nuxt/ProseH1.4939f8b2.mjs'
+    './_nuxt/ProseH1.6d6858cf.mjs'
   ).then((c) => c.default || c)),
   ProseH2: defineAsyncComponent(() => import(
     /* webpackChunkName: "components/prose-h2" */
-    './_nuxt/ProseH2.4878083a.mjs'
+    './_nuxt/ProseH2.1c6f0c40.mjs'
   ).then((c) => c.default || c)),
   ProseH3: defineAsyncComponent(() => import(
     /* webpackChunkName: "components/prose-h3" */
-    './_nuxt/ProseH3.a0ff67fa.mjs'
+    './_nuxt/ProseH3.ae49b2df.mjs'
   ).then((c) => c.default || c)),
   ProseH4: defineAsyncComponent(() => import(
     /* webpackChunkName: "components/prose-h4" */
-    './_nuxt/ProseH4.d799ca1f.mjs'
+    './_nuxt/ProseH4.4ba1a3c7.mjs'
   ).then((c) => c.default || c)),
   ProseH5: defineAsyncComponent(() => import(
     /* webpackChunkName: "components/prose-h5" */
-    './_nuxt/ProseH5.148a099d.mjs'
+    './_nuxt/ProseH5.f6910770.mjs'
   ).then((c) => c.default || c)),
   ProseH6: defineAsyncComponent(() => import(
     /* webpackChunkName: "components/prose-h6" */
-    './_nuxt/ProseH6.8178fe7e.mjs'
+    './_nuxt/ProseH6.2a25b1c5.mjs'
   ).then((c) => c.default || c)),
   ProseHr: defineAsyncComponent(() => import(
     /* webpackChunkName: "components/prose-hr" */
@@ -736,7 +736,7 @@ function createHead(initHeadObject) {
 }
 const renderHeadToString = (head) => renderSSRHead(head.unhead);
 version.startsWith("2.");
-const appHead = { "meta": [{ "name": "viewport", "content": "width=device-width, initial-scale=1" }, { "charset": "utf-8" }], "link": [{ "rel": "icon", "type": "image/x-icon", "href": "/favicon.ico" }, { "rel": "preload", "href": "/fonts/Montserrat.ttf", "as": "font", "type": "font/ttf", "importance": "high", "crossorigin": "anonymous" }, { "rel": "preload", "href": "/fonts/Karrik-Regular.woff2", "as": "font", "type": "font/woff2", "importance": "high", "crossorigin": "anonymous" }, { "rel": "manifest", "href": "/manifest.json" }], "style": [], "script": [], "noscript": [], "title": "WubbbelsWeb", "description": "Base description", "htmlAttrs": { "lang": "en" } };
+const appHead = { "meta": [{ "name": "viewport", "content": "width=device-width, initial-scale=1" }, { "charset": "utf-8" }], "link": [{ "rel": "icon", "type": "image/x-icon", "href": "/favicon.ico" }, { "href": "fonts/Montserrat.ttf", "as": "font", "type": "font/ttf" }, { "href": "fonts/Karrik-Regular.woff2", "as": "font", "type": "font/woff2" }, { "rel": "manifest", "href": "/manifest.json" }], "style": [], "script": [], "noscript": [], "title": "WubbbelsWeb", "description": "Base description", "htmlAttrs": { "lang": "en" } };
 const appPageTransition = { "name": "page", "mode": "out-in" };
 const appLayoutTransition = false;
 const appKeepalive = false;
@@ -791,7 +791,7 @@ const _routes = [
     meta: _47home_47erik_47webdev_47wubbelsweb_47pages_47about_46vueMeta,
     alias: (_47home_47erik_47webdev_47wubbelsweb_47pages_47about_46vueMeta == null ? void 0 : _47home_47erik_47webdev_47wubbelsweb_47pages_47about_46vueMeta.alias) || [],
     redirect: (_47home_47erik_47webdev_47wubbelsweb_47pages_47about_46vueMeta == null ? void 0 : _47home_47erik_47webdev_47wubbelsweb_47pages_47about_46vueMeta.redirect) || void 0,
-    component: () => import('./_nuxt/about.bc4a23f9.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/about.5224c7b1.mjs').then((m) => m.default || m)
   },
   {
     name: (_c = _47home_47erik_47webdev_47wubbelsweb_47pages_47contact_46vueMeta == null ? void 0 : _47home_47erik_47webdev_47wubbelsweb_47pages_47contact_46vueMeta.name) != null ? _c : "contact",
@@ -801,7 +801,7 @@ const _routes = [
     meta: _47home_47erik_47webdev_47wubbelsweb_47pages_47contact_46vueMeta,
     alias: (_47home_47erik_47webdev_47wubbelsweb_47pages_47contact_46vueMeta == null ? void 0 : _47home_47erik_47webdev_47wubbelsweb_47pages_47contact_46vueMeta.alias) || [],
     redirect: (_47home_47erik_47webdev_47wubbelsweb_47pages_47contact_46vueMeta == null ? void 0 : _47home_47erik_47webdev_47wubbelsweb_47pages_47contact_46vueMeta.redirect) || void 0,
-    component: () => import('./_nuxt/contact.f2477705.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/contact.0698d691.mjs').then((m) => m.default || m)
   },
   {
     name: (_e = _47home_47erik_47webdev_47wubbelsweb_47pages_47index_46vueMeta == null ? void 0 : _47home_47erik_47webdev_47wubbelsweb_47pages_47index_46vueMeta.name) != null ? _e : "index",
@@ -811,7 +811,7 @@ const _routes = [
     meta: _47home_47erik_47webdev_47wubbelsweb_47pages_47index_46vueMeta,
     alias: (_47home_47erik_47webdev_47wubbelsweb_47pages_47index_46vueMeta == null ? void 0 : _47home_47erik_47webdev_47wubbelsweb_47pages_47index_46vueMeta.alias) || [],
     redirect: (_47home_47erik_47webdev_47wubbelsweb_47pages_47index_46vueMeta == null ? void 0 : _47home_47erik_47webdev_47wubbelsweb_47pages_47index_46vueMeta.redirect) || void 0,
-    component: () => import('./_nuxt/index.131f5364.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/index.5649d224.mjs').then((m) => m.default || m)
   },
   {
     name: (_g = _47home_47erik_47webdev_47wubbelsweb_47pages_47projects_47_91_91slug_93_93_46vueMeta == null ? void 0 : _47home_47erik_47webdev_47wubbelsweb_47pages_47projects_47_91_91slug_93_93_46vueMeta.name) != null ? _g : "projects-slug",
@@ -821,7 +821,7 @@ const _routes = [
     meta: _47home_47erik_47webdev_47wubbelsweb_47pages_47projects_47_91_91slug_93_93_46vueMeta,
     alias: (_47home_47erik_47webdev_47wubbelsweb_47pages_47projects_47_91_91slug_93_93_46vueMeta == null ? void 0 : _47home_47erik_47webdev_47wubbelsweb_47pages_47projects_47_91_91slug_93_93_46vueMeta.alias) || [],
     redirect: (_47home_47erik_47webdev_47wubbelsweb_47pages_47projects_47_91_91slug_93_93_46vueMeta == null ? void 0 : _47home_47erik_47webdev_47wubbelsweb_47pages_47projects_47_91_91slug_93_93_46vueMeta.redirect) || void 0,
-    component: () => import('./_nuxt/_slug_.b599dfa0.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/_slug_.e5ae5885.mjs').then((m) => m.default || m)
   }
 ];
 const routerOptions0 = {
@@ -1032,7 +1032,7 @@ const _sfc_main$1 = {
   __name: "nuxt-root",
   __ssrInlineRender: true,
   setup(__props) {
-    const ErrorComponent = defineAsyncComponent(() => import('./_nuxt/error-component.16690ded.mjs').then((r) => r.default || r));
+    const ErrorComponent = defineAsyncComponent(() => import('./_nuxt/error-component.5dd840e9.mjs').then((r) => r.default || r));
     const nuxtApp = useNuxtApp();
     nuxtApp.deferHydration();
     provide("_route", useRoute());
@@ -1077,7 +1077,7 @@ const _wrapIf = (component, props, slots) => {
   return { default: () => props ? h(component, props === true ? {} : props, slots) : h(Fragment, {}, slots) };
 };
 const layouts = {
-  default: () => import('./_nuxt/default.ea99532f.mjs').then((m) => m.default || m)
+  default: () => import('./_nuxt/default.68168967.mjs').then((m) => m.default || m)
 };
 const LayoutLoader = defineComponent({
   props: {

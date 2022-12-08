@@ -25,26 +25,26 @@ export default defineNuxtConfig({
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         {
-          rel: 'preload',
           // development
           // href: '/_nuxt/assets/fonts/Montserrat.ttf',
           // production
-          href: '/fonts/Montserrat.ttf',
+          // rel: 'preload',
+          href: 'fonts/Montserrat.ttf',
           as: 'font',
           type: 'font/ttf',
-          importance: 'high',
-          crossorigin: 'anonymous'
+          // importance: 'high',
+          // crossorigin: 'anonymous'
         },
         {
-          rel: 'preload',
           // development
           // href: '/_nuxt/assets/fonts/Karrik-Regular.woff2',
           // production
-          href: '/fonts/Karrik-Regular.woff2',
+          // rel: 'preload',
+          href: 'fonts/Karrik-Regular.woff2',
           as: 'font',
           type: 'font/woff2',
-          importance: 'high',
-          crossorigin: 'anonymous'
+          // importance: 'high',
+          // crossorigin: 'anonymous'
         },
         { rel: 'manifest', href: '/manifest.json' }
       ]

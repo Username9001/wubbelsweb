@@ -2,12 +2,19 @@
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
+  app: {
+    head: {
+      title: 'WubbbelsWeb'
+    },
+    pageTransition: { name: 'page', mode: 'out-in' }
+  },
   css: [
     '~/assets/css/main.scss',
     // '~/assets/style/global.scss'
   ],
   modules: [
     '@nuxt/content',
+    // '@nuxt/ui'
   ],
   components: [{
     path: '~/components',
@@ -22,7 +29,6 @@ export default defineNuxtConfig({
         },
     },
   },
-  app: {
-    pageTransition: { name: 'page', mode: 'out-in' }
-  },
+  pages: true,
+  ssr: false,
 })

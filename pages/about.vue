@@ -1,16 +1,20 @@
 <template lang="">
     <Transition>
-        <div class="contact">
+        <div class="about">
             <header class="header">
                 <section class="text-box">
-                    <p>Want to work together?</p>
-                    <h1>Feel free to contact me</h1>
-                    <h1>Mail me below</h1>
-                    <p>Need a new website for your company? Or have an interesting project you could use some web development help with?</p>
-                    <EmailButton />
+                    <p>Looking to know more?</p>
+                    <h1>A short story</h1>
+                    <h1>About me</h1>
+                    <p></p>
+                    <NuxtLink to="#about" class="header-link">
+                        <button>
+                            Continue reading
+                        </button>
+                    </NuxtLink>
                 </section>
             </header>
-            <div class="main" id="contact">
+            <div class="main" id="about">
                 <div class="markdown-box">
                     <ContentRenderer :value="data">      
                         <h1>{{ data.title }}</h1>
@@ -26,7 +30,7 @@
                     </ContentRenderer>
                 </div>
             </div>
-            <!-- <div class="main" id="contact">
+            <!-- <div class="main" id="about">
                 <div class="text-block">
                     <p>I started my journey as a programmer while studying Industrial Design. Making websites to showcase my progress and creating programs for microcontrollers.</p>
                     <p class="second-paragraph">From there on out I branched out into web development. Over the years I have gained experience working on both frontend and backend applications.</p>
@@ -36,7 +40,7 @@
     </Transition>
 </template>
 <script setup lang="ts">
-const { data } = await useAsyncData('page-data', () => queryContent('/contact').findOne())
+const { data } = await useAsyncData('page-data', () => queryContent('/about').findOne())
 
 defineProps({
   title: {

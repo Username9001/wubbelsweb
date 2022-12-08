@@ -31,32 +31,35 @@ export default {
 <style lang="scss">
 header {
   position: relative;
-  height: 100%;
-  min-height: 90vh;
+  height: calc(100vh - 100px);
   background: $grey;
   margin: auto;
-  padding: 72px 0;
-  @media (max-width: 820px) {
+  min-height: 100vh;
+  // padding: 72px 0;
+  @media (max-width: 840px) {
     padding: 12px 0;
+    // min-height: fit-content;
   }
   color: #fff;
-  video {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-  }
   .text-box {
-    max-width: 820px;
-    margin: 80px auto;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% - 100px));
+    width: 840px;
+    // margin: 180px auto 80px auto;
     letter-spacing: 1px;
-    @media (max-width: 820px) {
-        max-width: 70%;
+    border-right: 32px solid $lightest-blue;
+    @media (max-width: 840px) {
+      width: 70%;
+      margin: auto;
+      border-right: 12px solid $lightest-blue;
     }
     @media (max-width: 480px) {
-        max-width: 90%;
+      width: 90%;
+      border-right: none;
+      // border-bottom: 2px solid $light-blue;
     }
     p:nth-child(1) {
       padding-top: 0;
@@ -66,7 +69,7 @@ header {
         font-family: 'Karrik';
         font-size: 4rem;
         font-weight: 300;
-        @media (max-width: 820px) {
+        @media (max-width: 840px) {
             font-size: 3rem;
             font-weight: 300;
         }
@@ -81,8 +84,8 @@ header {
       p {
         font-size: 1.2rem;
         max-width: 50%;
-        @media (max-width: 820px) {
-            max-width: 100%;
+        @media (max-width: 840px) {
+            max-width: 90%;
         }
         padding: 48px 0;
         &:nth-of-type(1) {

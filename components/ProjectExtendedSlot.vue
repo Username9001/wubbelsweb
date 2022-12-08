@@ -1,7 +1,6 @@
 <template>
     <div>
         <slot />
-        <slot name="descriptionSlot" />
     </div>
 </template>
 <script>

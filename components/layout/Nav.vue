@@ -1,11 +1,5 @@
 <template lang="">
     <nav>
-        <div class="left-side">
-            <NuxtLink class="nav-logo" to="/">
-                <!-- <img src="https://via.placeholder.com/200x200" alt=""> -->
-                <h1>E</h1>
-            </NuxtLink>
-        </div>
         <div class="right-side">
             <ul>
                 <li>
@@ -13,11 +7,11 @@
                         <h2>Home</h2>
                     </NuxtLink>
                 </li>
-                <!-- <li>
-                    <NuxtLink to="#projects">
-                        <h2>Projects</h2>
+                <li>
+                    <NuxtLink to="/about">
+                        <h2>About</h2>
                     </NuxtLink>
-                </li> -->
+                </li>
                 <li>
                     <NuxtLink to="/contact">
                         <h2>Contact</h2>
@@ -35,8 +29,9 @@ export default {
 
 <style scoped lang="scss">
     nav {
-        padding: 24px 64px;
-        @media (max-width: 1020px) {
+        padding: 64px;
+        padding-bottom: 0;
+        @media (max-width: 840px) {
             padding: 48px;
         }
         @media (max-width: 840px) {
@@ -44,14 +39,9 @@ export default {
         }
         background: $grey;
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: auto;
         align-items: center;
-        .nav-logo {
-            display: block;
-            font-size: 6rem;
-            color: $light-blue;
-            width: 120px;
-        }
+        // height: 90px;
         img {
             max-width: 48px;
             grid-column: 1;
@@ -62,13 +52,28 @@ export default {
             color: #fff;
             list-style-type: none;
             margin: auto;
+            font-size: 1.2rem;
             li {
                 display: inline-block;
                 vertical-align: middle;
-                padding: 0 24px;
-                a.nuxt-link-active {
+                padding: 0 48px;
+                @media(max-width: 840px) {
+                    padding: 0 24px;
+                    // display: inline;
+                }
+                @media(max-width: 480px) {
+                    padding: 12px;
+                    font-size: 1rem;
+                    // display: inline;
+                }
+                a {
+                    transition: .4s;
                     color: $light-blue;
-                    background: #fff;
+                    &.router-link-exact-active {
+                    transition: .4s;
+                    color: #fff;
+                    opacity: 0.95;
+                }
                 }
             }
         }

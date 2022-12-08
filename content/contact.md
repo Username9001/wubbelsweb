@@ -3,6 +3,6 @@ description: Interactive musical speaker with directional sound. Lorem ipsum, do
 further_description: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fugiat perspiciatis doloremque nostrum harum ex eius autem. Architecto voluptatem impedit magni obcaecati inventore expedita, molestias libero facilis similique? Expedita, delectus. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fugiat perspiciatis doloremque nostrum harum ex eius autem. Architecto voluptatem impedit magni obcaecati inventore expedita, molestias libero facilis similique? Expedita, delectus. 
 ending_description: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fugiat perspiciatis doloremque nostrum harum ex eius autem. Architecto voluptatem impedit magni obcaecati inventore expedita, molestias libero facilis similique? Expedita, delectus. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fugiat perspiciatis doloremque nostrum harum ex eius autem. Architecto voluptatem impedit magni obcaecati inventore expedita, molestias libero facilis similique? Expedita, delectus.
 ---
-# Erik Wubbels
+# Contact
 
 You can go back to the [home page](/).

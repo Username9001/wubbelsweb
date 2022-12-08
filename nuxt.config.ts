@@ -10,6 +10,11 @@ export default defineNuxtConfig({
       { name: 'theme-color', content: '#ffdd67' }
     ],
   },
+  runtimeConfig: {
+    public: {
+      baseURL: 'https://pftest.wubbelsweb.com/',
+    },
+  },
   app: {
     head: {
       title: 'WubbbelsWeb',
@@ -24,7 +29,7 @@ export default defineNuxtConfig({
           // development
           // href: '/_nuxt/assets/fonts/Montserrat.ttf',
           // production
-          href: 'http://192.168.1.25:3000/fonts/Montserrat.ttf',
+          href: 'https://pftest.wubbelsweb.com/fonts/Montserrat.ttf',
           as: 'font',
           type: 'font/ttf',
           importance: 'high',
@@ -35,7 +40,7 @@ export default defineNuxtConfig({
           // development
           // href: '/_nuxt/assets/fonts/Karrik-Regular.woff2',
           // production
-          href: 'http://192.168.1.25:3000/fonts/Karrik-Regular.woff2',
+          href: 'https://pftest.wubbelsweb.com/fonts/Karrik-Regular.woff2',
           as: 'font',
           type: 'font/woff2',
           importance: 'high',
@@ -69,38 +74,13 @@ export default defineNuxtConfig({
     optimization: {
       minimize: true
     },
-    // build: {
-    //   ssr: true,
-    // }
   },
   nitro: {
     compressPublicAssets: {
       gzip: true,
       brotli: true
-    }
+    },
   },
   pages: true,
   ssr: true,
-  // build: {
-  //   extractCSS: true,
-  //   optimizeCSS: true,
-  //   html:{
-  //     minify:{
-  //       collapseBooleanAttributes: true,
-  //       decodeEntities: true,
-  //       minifyCSS: true,
-  //       minifyJS: true,
-  //       processConditionalComments: true,
-  //       removeEmptyAttributes: true,
-  //       removeRedundantAttributes: true,
-  //       trimCustomFragments: true,
-  //       useShortDoctype: true,
-  //       minifyURLs: true,
-  //       removeComments: true,
-  //       removeEmptyElements: true,
-  //       preserveLineBreaks: false,
-  //       collapseWhitespace: true    
-  //     }
-  //   }
-  // }
 })

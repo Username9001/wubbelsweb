@@ -27,6 +27,8 @@
 </template>
 
 <script>
+// const config = useRuntimeConfig();
+// console.log('base url is' , config.baseUrl)
 // const intersection = this.all_projects.filter(stack => array2.includes(element));
 export default {
   head() {
@@ -94,7 +96,7 @@ export default {
           slug: 'bootleg-breathing',
           link: 'https://bb.wubbelsweb.com',
           stack: ['VueJS/NuxtJS', 'Bootstrap', 'SASS'],
-          img: 'http://192.168.1.25:3000/img/test.jpg'
+          img: 'https://pftest.wubbelsweb.com/img/test.jpg'
         },
         {
           name: 'Plant DB',

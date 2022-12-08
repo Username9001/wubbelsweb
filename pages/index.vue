@@ -149,7 +149,7 @@ export default {
   },
   methods: {
     toggleInStackList(stack) {
-      console.log(stack.toString())
+      // console.log(stack.toString())
       // unlist "all projects" if other options are selected
       if ( this.stack_search.includes('All Projects') && stack.title !== 'All Projects') {
         this.stack_search = this.stack_search.filter(e => e !== 'All Projects')
@@ -157,15 +157,15 @@ export default {
       // unlist other options if "all projects" is selected
       if ( stack.title == 'All Projects' && this.stack_search.length > 0 ) {
         this.stack_search = ['All Projects']
-        console.log("HIER", this.stack_search)
+        // console.log("HIER", this.stack_search)
         return
       }
       if ( this.stack_search.includes(stack.title) ) {
           this.stack_search = this.stack_search.filter(e => e !== stack.title)
-          console.log('test', this.stack_search)
+          // console.log('test', this.stack_search)
       } else if ( !this.stack_search.includes(stack.title) ) {
           this.stack_search.push(stack.title)
-          console.log(stack.title)
+          // console.log(stack.title)
       }
       return
     },
@@ -249,7 +249,7 @@ export default {
         display: none;
       }
       input[type="radio"]:checked ~ *{
-        background: $accent-color;
+        opacity: .5;
         color: #fff;
       }
     }

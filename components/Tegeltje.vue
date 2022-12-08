@@ -36,7 +36,7 @@ data() {
     changeQuote() {
       this.quotePressed = true
       this.newQuote = false
-      console.log('pressed:', this.quotePressed)
+      // console.log('pressed:', this.quotePressed)
       setTimeout(() => 
       { 
         this.quotePressed = false

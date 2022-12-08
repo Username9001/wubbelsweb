@@ -26,20 +26,20 @@ export default {
             // if not in array
             if ( !this.stack_search.includes(newStack) ) {
                 this.stack_search.push(newStack)
-                console.log(newStack)
+                // console.log(newStack)
                 return
             }
-            console.log('already in stack')
+            // console.log('already in stack')
             return
         },
         removeFromStackList(newStack) {
             // if not in array
             if ( this.stack_search.includes(newStack) ) {
                 this.stack_search.pop(newStack)
-                console.log(newStack)
+                // console.log(newStack)
                 return
             }
-            console.log('nothing to remove')
+            // console.log('nothing to remove')
             return
         },
         toggleInStackList(stack) {
@@ -49,10 +49,10 @@ export default {
 
             if ( this.stack_search.includes(stack) ) {
                 this.stack_search.splice(indexOf(stack))
-                console.log("removing", stack)
+                // console.log("removing", stack)
             } else if ( !this.stack_search.includes(stack) ) {
                 this.stack_search.push(stack)
-                console.log("adding", stack)
+                // console.log("adding", stack)
             }
             return
         }

@@ -28,6 +28,6 @@ footer {
   text-align: center;
   z-index: 1;
   padding-top: 120px;
-  padding-bottom: 84px;
+  padding-bottom: 24px;
 }
 </style>

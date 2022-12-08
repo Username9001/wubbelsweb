@@ -3,31 +3,34 @@
         <div :key="$route.params.slug">
             <header v-if="$route.params.slug" class="header">
                 <section class="text-box">
-                    <ContentDoc :path="`projects/${ $route.params.slug.toString() }`" class="project-header" />
-                    <NuxtLink to="#main" class="header-link">
-                        <button>
-                            Read more
-                        </button>
-                    </NuxtLink>
+                    <!-- <ContentDoc :path="`projects/${ $route.params.slug.toString() }`" class="project-header" /> -->
+                    <ContentRenderer :value="data" >
+                        <h1 v-if="data.title">{{ data.title }}</h1>
+                        <p v-if="data.subtitle">{{ data.subtitle }}</p>
+                        <p v-if="data.excerpt">{{ data.excerpt }}</p>
+                    </ContentRenderer>
+                    <nuxt-link aria-label="Read more" to="#main" class="header-link read-more-link">
+                        Continue
+                    </nuxt-link>
                 </section>
             </header>
             <div class="main" id="main">
                 <!-- <button :disabled="refreshing" @click="refreshAll">      Refetch All Data    </button> -->
                 <div class="markdown-box" v-if="refreshed">
+                    <!-- <ContentDoc :path="`projects/${ $route.params.slug.toString() }`" /> -->
                     <ContentRenderer :value="data">      
                         <h1>{{ data.title }}</h1>      
-                        <p>{{ data.description }}</p>
+                        <p>{{ data.introduction }}</p>
                         <div class="img-container">
-                            <img src="https://loremflickr.com/600/335" alt="">
+                            <img src="https://loremflickr.com/600/335" width="600" height="335"  alt="">
                             <small>Subscript for image</small>
                         </div>
                         <p>{{ data.further_description }}</p>
                         <div class="img-container container-large">
-                            <img src="https://loremflickr.com/600/335" alt="">
+                            <img src="https://loremflickr.com/600/335" width="600" height="335"  alt="">
                             <small>Subscript for image</small>
                         </div>
                         <p>{{ data.ending_description }}</p>
-                        <!-- <div class="end-buttons"> -->
                             <button class="to-website">
                                 <nuxt-link :to="data.link" target="_blank">
                                     Visit website
@@ -38,7 +41,6 @@
                                     Back to projects
                                 </nuxt-link>
                             </button>
-                        <!-- </div> -->
                     </ContentRenderer>
                 </div>
             </div>
@@ -92,8 +94,39 @@ onMounted(() => {
 
 </script>
 
-<style lang="scss">
-
+<style scoped lang="scss">
+header .text-box {
+    padding-bottom: 96px !important;
+}
+.read-more-link {
+    position: absolute;
+    bottom: 0;
+    height: auto;
+    margin: 0;
+    padding: 12px 24px;
+    display: block;
+    width: fit-content;
+    z-index: 55;
+    background: $lightest-blue;
+    color: $grey;
+    a {
+        position: absolute;
+        height: auto;
+        font-weight: 700;
+        padding: 12px 24px;
+        border: none;
+        transition: .5s ease-out;
+        color: $grey;
+        text-decoration: none;
+        &:hover {
+            color: #fff;
+            // animation
+            transition: .5s ease-out;
+            transform: scale(1.05);
+            animation: AnimationName 3s infinite;
+        }
+    }
+}
 .markdown-box {
     width: 100%;
     max-width: 840px;
@@ -105,10 +138,11 @@ onMounted(() => {
         font-size: 6rem;
         color: $grey;
         // margin-bottom: 96px;
+        border-right: 32px solid $grey;
     }
     p {
         padding: 48px;
-        margin: 120px auto;
+        margin: 60px auto;
         font-size: 1.2rem;
         max-width: 75%;
         letter-spacing: 1px;
@@ -128,13 +162,15 @@ onMounted(() => {
         display: block;
         width: 80%;
         margin: 24px 48px 24px auto;
+        img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+        }
     }
     .container-large {
         width: 120%;
         margin: 24px auto 24px -10%;
-        img {
-            width: 100%;
-        }
     }
     button {
         height: auto;
@@ -197,7 +233,6 @@ onMounted(() => {
         margin: 0;
         margin-top: -60px;
         padding: 18px 24px;
-        position: sticky;
         bottom: 24px;
         left: 0;
         text-align: left;
@@ -206,7 +241,6 @@ onMounted(() => {
       .to-website {
         margin-top: -60px;
         padding: 18px 24px;
-        position: sticky;
         bottom: 24px;
         text-align: right;
         justify-content: right;

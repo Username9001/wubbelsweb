@@ -1,29 +1,28 @@
 @font-face {
     font-family: "Montserrat";
     src: local("Montserrat"),
-     url(~/assets/fonts/Montserrat.ttf) format("truetype");
+    url(http://192.168.1.25:3000/fonts/Montserrat.ttf) format("truetype");
+    font-display: swap;
   }
   
 @font-face {
    font-family: "Karrik";
    src: local("Karrik"),
-   url(~/assets/fonts/Karrik-Regular.woff2) format("truetype");
+      url(http://192.168.1.25:3000/fonts/Karrik-Regular.woff2)
+      format("truetype");
+   font-display: swap;
 }
 
-@font-face {
-   font-family: "Courgette";
-   src: local("Courgette"),
-   url(~/assets/fonts/Courgette-Regular.ttf) format("truetype");
-}
+// @font-face {
+//    font-family: "Bebas";
+//    src: local("Bebas-Neue"),
+//    url(~/assets/fonts/BebasNeue-Regular.ttf) format("truetype");
+//    font-display: swap;
+// }
 
-@font-face {
-   font-family: "Bebas";
-   src: local("Bebas-Neue"),
-   url(~/assets/fonts/BebasNeue-Regular.ttf) format("truetype");
-}
-
-@font-face {
-   font-family: "Saira";
-   src: local("Saira-VariableFont"),
-   url(~/assets/fonts/Saira-VariableFont_wdth,wght.ttf) format("truetype");
-}
+// @font-face {
+//    font-family: "Saira";
+//    src: local("Saira-VariableFont"),
+//    url(~/assets/fonts/Saira-VariableFont_wdth,wght.ttf) format("truetype");
+//    font-display: swap;
+// }

@@ -3,31 +3,14 @@
     <!-- MARKDOWN -->
     <div class="project-header">
       <ContentDoc v-if="project" :path="`projects/${ project.slug }`"></ContentDoc>
-      <!-- END OF MARKDOWN -->
-      <!-- <div class="used-tech">
-        <small>Technologies used: </small>
-        <ul class="stack-list">
-          <li v-for="item in project.stack" :key="item">
-            <i>{{ item }}&nbsp;</i>
-          </li>
-        </ul>
-      </div> -->
-      <nuxt-link v-if="project" :to="{ path: 'projects/' + project.slug }">
-        <button class="read-more-link">
-          Read more
-        </button>
-      </nuxt-link>
+        <nuxt-link class="read-more-link" v-if="project" :to="{ path: 'projects/' + project.slug }">
+          Visit project page
+        </nuxt-link>
     </div>
     <div class="img-container">
       <img :src="`${ project.img }`" alt="" />
-      <!-- <img src="http://192.168.1.25:3000/img/test.jpg" /> -->
     </div>
       <br>
-      <!-- <button v-if="project.link">
-          <nuxt-link :to="`${ project.link }`" target="#">
-            Visit {{ project.name }}
-          </nuxt-link>
-      </button> -->
   </div>
 </template>
 
@@ -88,7 +71,7 @@ export default {
         width: fit-content;
         z-index: 55;
       }
-      button {
+      a.read-more-link {
         position: absolute;
         height: auto;
         background: $light-blue;
@@ -96,11 +79,8 @@ export default {
         padding: 12px 24px;
         border: none;
         transition: .5s ease-out;
-        a {
-            color: #fff;
-            text-shadow: 0 0 5px #000;
-            text-decoration: none;
-        }
+        color: $grey;
+        text-decoration: none;
         &:hover {
             color: #fff;
             // animation

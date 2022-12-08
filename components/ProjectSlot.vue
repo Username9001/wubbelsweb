@@ -1,7 +1,13 @@
 <template>
     <div>
+      <p>
         <slot />
-        <slot name="descriptionSlot" />
+      </p>
+      <small>
+        <slot name="subtitle" />
+      </small>
+      <slot name="excerpt" />
+      <!-- <slot name="description" /> -->
     </div>
 </template>
 <script>
@@ -13,3 +19,13 @@ export default {
     },
 };
 </script>
+<style scoped lang="scss">
+  img {
+    max-width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    &:nth-of-type(1) {
+      margin-right: -80px;
+    }
+  }
+</style>

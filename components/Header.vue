@@ -31,7 +31,7 @@ export default {
 <style lang="scss">
 header {
   position: relative;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 164px);
   background: $grey;
   margin: auto;
   min-height: 100vh;
@@ -63,6 +63,7 @@ header {
     }
     p:nth-child(1) {
       padding-top: 0;
+      padding-left: 3px;
     }
     padding: 0;
       h1, h2, h3 {

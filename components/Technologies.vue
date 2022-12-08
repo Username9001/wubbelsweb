@@ -1,7 +1,7 @@
 <template>
-  <h3 class="tech-title">
+  <h2 class="tech-title">
     I have worked with the following technologies
-  </h3>
+  </h2>
   <div class="technologies">
     <div v-for="stack in technologies" :key="stack" class="tech">
       <h3 class="tech-title">{{ stack.title }}</h3>

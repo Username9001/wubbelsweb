@@ -1,7 +1,6 @@
 <template lang="">
     <div class="stack-list">
         <div class="row">
-            <h4>&nbsp;</h4>
             <label class="stack-option">
             <input checked ref="rolesSelected" type="checkbox" value="All Projects" @change="$emit('update-stack-search', {title: 'All Projects'})"  id="all-projects">
             <span>
@@ -12,9 +11,9 @@
         </div>
         <br>
         <div class="row">
-            <h4>
+            <h2>
                 Frontend
-            </h4>
+            </h2>
             <label @change="$emit('update-stack-search', stack)" v-for="stack in stack_options.filter(stack => stack.category == 'Frontend')" class="stack-option">
                 <input :value="`${ stack }`" type="checkbox"  id="" class="stack-option-input">
                 <span>
@@ -23,9 +22,9 @@
             </label>
         </div>
         <div class="row">
-            <h4>
+            <h2>
                 Backend
-            </h4>
+            </h2>
             <label @change="$emit('update-stack-search', stack)" v-for="stack in stack_options.filter(stack => stack.category == 'Backend')" class="stack-option">
                 <input :value="`${ stack }`" type="checkbox"  id="" class="stack-option-input">
                 <span>
@@ -34,9 +33,9 @@
             </label>
         </div>
         <div class="row">
-            <h4>
+            <h2>
                 Other
-            </h4>
+            </h2>
             <label @change="$emit('update-stack-search', stack)" v-for="stack in stack_options.filter(stack => stack.category == 'Other')" class="stack-option">
                 <input :value="`${ stack }`" type="checkbox"  id="" class="stack-option-input">
                 <span>
@@ -45,9 +44,9 @@
             </label>
         </div>
         <div class="row">
-            <h4>
+            <h3>
                 TESTING
-            </h4>
+            </h3>
             <button @click="checkAllStacks()" class="test-button">
                 Update Counters
             </button>
@@ -91,14 +90,14 @@ export default {
                     // stack.counter = 0
                 }
             }
-            console.log("Count:", stack.title, '=', stack.counter)
-            console.log("Current filter:", this.current_filter)
+            // console.log("Count:", stack.title, '=', stack.counter)
+            // console.log("Current filter:", this.current_filter)
 
             // return stack.counter
         },
         checkAllStacks() {
             for ( var j = 0; j < this.stack_options.length; j++ ) {
-                console.log("option:", this.stack_options[j])
+                // console.log("option:", this.stack_options[j])
                 this.projectsRemaining(this.stack_options[j])
                 // check result
 
@@ -125,15 +124,22 @@ export default {
             input {
                 display: none;
             }
+            input:not(:checked) ~ span {
+                opacity: 0.75;
+            }
             input:checked ~ span {
-            background-color: $accent-color;
+            // background-color: $accent-color;
+            opacity:  1;
             }
         }
         .test-button {
             padding: 12px;
-            margin: auto 0 0 0;
+            margin: 10px 0 0 0;
             width: fit-content;
+            font-family: 'Karrik';
+            font-size: 1.2rem;
             font-weight: 700;
+            color: $grey;
         }
     }
 </style>

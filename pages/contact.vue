@@ -20,7 +20,7 @@
                             <p>{{ data.further_description }}</p>
                         </div>      
                         <div class="img-container">
-                            <img src="https://loremflickr.com/600/335" alt="">
+                            <img src="https://loremflickr.com/600/335" width="600" height="335"  alt="">
                             <small>Subscript for image</small>
                         </div>
                         <p>{{ data.ending_description }}</p>
@@ -83,6 +83,7 @@ defineProps({
     h1 {
         font-size: 6rem;
         color: $grey;
+        border-right: 32px solid $grey;
     }
     p {
         padding: 48px;

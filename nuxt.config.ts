@@ -12,7 +12,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      baseURL: 'https://pftest.wubbelsweb.com/',
+      baseURL: '/',
     },
   },
   app: {
@@ -29,7 +29,7 @@ export default defineNuxtConfig({
           // development
           // href: '/_nuxt/assets/fonts/Montserrat.ttf',
           // production
-          href: 'https://pftest.wubbelsweb.com/fonts/Montserrat.ttf',
+          href: '/fonts/Montserrat.ttf',
           as: 'font',
           type: 'font/ttf',
           importance: 'high',
@@ -40,7 +40,7 @@ export default defineNuxtConfig({
           // development
           // href: '/_nuxt/assets/fonts/Karrik-Regular.woff2',
           // production
-          href: 'https://pftest.wubbelsweb.com/fonts/Karrik-Regular.woff2',
+          href: '/fonts/Karrik-Regular.woff2',
           as: 'font',
           type: 'font/woff2',
           importance: 'high',

@@ -1,0 +1,1 @@
+import{o,c as e,w as n,b as c,f as s}from"./entry.6ecf1150.js";import{_}from"./_plugin-vue_export-helper.a1a6add7.js";const a={},r=c("button",null," Reach out ",-1);function i(p,u,l,m,f,d){const t=s;return o(),e(t,{to:"mailto: erik.wubbels@gmail.com",class:"header-link"},{default:n(()=>[r]),_:1})}const k=_(a,[["render",i]]);export{k as default};

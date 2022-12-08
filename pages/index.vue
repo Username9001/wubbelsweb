@@ -96,7 +96,7 @@ export default {
           slug: 'bootleg-breathing',
           link: 'https://bb.wubbelsweb.com',
           stack: ['VueJS/NuxtJS', 'Bootstrap', 'SASS'],
-          img: 'https://pftest.wubbelsweb.com/img/test.jpg'
+          img: '/img/test.jpg'
         },
         {
           name: 'Plant DB',

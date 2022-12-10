@@ -1,28 +1,17 @@
 @font-face {
-    font-family: "Montserrat";
-    src: local("Montserrat"),
-    url(https://pftest.wubbelsweb.com/fonts/Montserrat.ttf) format("truetype");
-    font-display: swap;
+   font-family: "Montserrat";
+   src: local("Montserrat"),
+   url(http://192.168.1.25:3000/fonts/Montserrat.ttf) format("truetype");
+   //  url(https://pfte.wubbelsweb.com/fonts/Montserrat.ttf) format("truetype");
+   font-display: swap;
   }
   
 @font-face {
    font-family: "Karrik";
    src: local("Karrik"),
-      url(https://pftest.wubbelsweb.com/fonts/Karrik-Regular.woff2)
-      format("truetype");
+      // dev
+      url(http://192.168.1.25:3000/fonts/Karrik-Regular.woff2)format("truetype");
+      // prod
+      // url(https://pfte.wubbelsweb.com/fonts/Karrik-Regular.woff2)format("truetype");
    font-display: swap;
 }
-
-// @font-face {
-//    font-family: "Bebas";
-//    src: local("Bebas-Neue"),
-//    url(~/assets/fonts/BebasNeue-Regular.ttf) format("truetype");
-//    font-display: swap;
-// }
-
-// @font-face {
-//    font-family: "Saira";
-//    src: local("Saira-VariableFont"),
-//    url(~/assets/fonts/Saira-VariableFont_wdth,wght.ttf) format("truetype");
-//    font-display: swap;
-// }

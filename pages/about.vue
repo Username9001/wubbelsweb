@@ -15,6 +15,16 @@
                 </section>
             </header>
             <div class="main" id="about">
+                <!-- TESTING STORE -->
+                <!-- Hello
+                {{ tester.$state }}
+                <button @click="tester.changeMe()">
+                    <code>tester.changeMe()</code>
+                </button>
+                <button @click="tester.getProject(3)">
+                    <code>tester.getProject()</code>
+                </button> -->
+                <!-- END OF TESTING STORE -->
                 <!-- <button :disabled="refreshing" @click="refreshAll">      Refetch All Data    </button> -->
                 <div class="markdown-box" v-if="expanded">
                     <ContentRenderer :value="data">      

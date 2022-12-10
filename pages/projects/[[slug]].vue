@@ -97,6 +97,12 @@ onMounted(() => {
 <style scoped lang="scss">
 header .text-box {
     padding-bottom: 96px !important;
+    .header-link {
+        &:hover {
+            opacity: 0.5;
+            transition: .5s ease-out;    
+        }
+    }
 }
 .read-more-link {
     position: absolute;

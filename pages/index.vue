@@ -1,25 +1,39 @@
 <template>
   <Transition>
-    <div id="portfolio" v-if="loaded">
-      <Header :personalia="personalia" />
-      <div v-if="loaded" id="main" class="main">
+    <div id="portfolio" v-if="projectStore">
+      <Header :personalia="personaliaStore.personalia" />
+      <div id="main" class="main">
         <!-- PROJECT LOOKUP -->
         <div class="search-wrapper" id="projects">
             <h1 class="grid-title">
               Portfolio
+              <!-- {{ projects }} -->
             </h1>
             <!-- STACK OPTIONS SEARCH -->
-            <SearchFilterButtons v-model="stack_search" @update-stack-search="toggleInStackList($event)" :stack_options="stack_options" :stack_search="stack_search" :current_filter="current_filter" />
-            <!-- RESULT DISPLAY -->
-            <h3 class="counter" v-if="(combinedFilter.length)">
-              {{ combinedFilter.length }} Project<ins v-if="(combinedFilter.length > 1)">s</ins>
-            </h3>
+            <div class="filter" v-if="projectsFilter">
+              <button @click="projectsFilter = 'all'">All</button>
+              <button @click="projectsFilter = 'favs'">Favs</button>
+              <button @click="projectsFilter = 'toggledTechs'">toggledTechs</button>
+            </div>
+            <SearchSelectTech />
           </div>
-
+          {{ projectStore.toggledTechs }}
+          <hr>
+          {{ projectStore.toggledTechs.length }}
+          <hr>
+          {{ projectStore.projectsFiltered }}
+          <hr>
+          {{ techFilterStore.showSelectedTechs }}
+          <hr>
+          {{ projectStore.toggledTechs }}
+          <button @click="projectStore.getFilteredProjects">Filtered Projects</button>
+          <!-- {{ projectStore.projects }} -->
           <div id="project-grid">
-            <TransitionGroup name="list">
-              <Project v-for="project in combinedFilter" :key="project.name" :project="project" />
-            </TransitionGroup>
+            <transition-group name="list">
+                <Project v-if="projectsFilter === 'all'" v-for="project in projectStore.projects" :key="project.slug" :projectData="project" />
+                <Project v-if="projectsFilter === 'favs'" v-for="project in projectStore.favs" :key="project.slug" :projectData="project" />
+                <Project v-if="projectsFilter === 'toggledTechs'" v-for="project in projectStore.projectsFiltered" :key="project.slug" :projectData="project" />
+            </transition-group>
           </div>
       </div>
     </div>
@@ -27,177 +41,23 @@
 </template>
 
 <script>
-// const config = useRuntimeConfig();
-// console.log('base url is' , config.baseUrl)
-// const intersection = this.all_projects.filter(stack => array2.includes(element));
-export default {
-  head() {
-    return {
-      title: "Index Header text",
-      loaded: false,
-    };
-  },
-  data() {
-    return {
-      loaded: false,
-      search: '',
-      stack_search: [],
-      current_filter : ['All Projects'],
-      stack_options: [
-        // { title: 'All Projects', category: '', counter: 0},
-        { title: 'VueJS/NuxtJS', category: 'Frontend', counter: 0},
-        { title: 'SASS', category: 'Frontend', counter: 0},
-        { title: 'TypeScript', category: 'Frontend', counter: 0},
-        { title: 'Wordpress', category: 'Backend', counter: 0},
-        { title: 'Laravel', category: 'Backend', counter: 0},
-        { title: 'WooCommerce', category: 'Backend', counter: 0},
-        { title: 'Docker', category: 'Backend', counter: 0},
-        // { title: 'Raspberry Pi', category: 'Other', counter: 0},
-        { title: 'Processing', category: 'Other', counter: 0},
-        { title: 'Arduino', category: 'Other', counter: 0},
-      ],
-      personalia: {
-        name: 'Erik Wubbels',
-        description: 'I\'m a web developer based in Eindhoven, The Netherlands. I specialize in interactive design, and am currently open for new projects and opportunities. ',
-        email: 'erik.wubbels@gmail.com',
-      },
-      all_projects: [
-        {
-          // WEBDEV
-          name: 'Misty Fields 2022',
-          slug: 'misty-fields-2022',
-          link: 'https://mistyfields.com',
-          stack: ['Wordpress', 'SASS'],
-          img: 'https://loremflickr.com/600/335'
-        },
-        {
-          name: 'Misty Fields 2019',
-          slug: 'misty-fields-2019',
-          link: 'https://mistyfields.com',
-          stack: ['Wordpress', 'SASS'],
-          img: 'https://loremflickr.com/600/337'
-        },
-        {
-          name: 'TomsTech',
-          slug: 'tomstech',
-          link: 'https://tomstech.nl',
-          stack: ['Wordpress', 'SASS'],
-          img: 'https://loremflickr.com/600/339'
-        },
-        {
-          name: 'Pineapple Productions',
-          slug: 'pineapple-productions',
-          link: 'https://pp.wubbelsweb.com',
-          stack: ['Wordpress', 'SASS'],
-          img: 'https://loremflickr.com/600/331'
-        },
-        {
-          name: 'Bootleg Breathing',
-          slug: 'bootleg-breathing',
-          link: 'https://bb.wubbelsweb.com',
-          stack: ['VueJS/NuxtJS', 'Bootstrap', 'SASS'],
-          img: '/img/test.jpg'
-        },
-        {
-          name: 'Plant DB',
-          slug: 'plant-db',
-          link: 'https://plantnet.wubbelsweb.com/species',
-          stack: ['VueJS/NuxtJS', 'Bootstrap', 'SASS', 'Laravel', 'GraphQL', 'MongoDB', 'Docker'],
-          img: 'https://loremflickr.com/600/334'
-        },
-        {
-          name: 'Bits of Freedom',
-          slug: 'bits-of-freedom',
-          stack: ['Bootstrap', 'Vanilla JS', 'SASS'],
-          img: 'https://loremflickr.com/600/332'
-        },
-        {
-          name: 'DAGDice',
-          slug: 'dagdice',
-          stack: ['Adobe XD', 'VueJS/NuxtJS', 'GraphQL', 'TypeScript',  'Docker'],
-          img: 'https://loremflickr.com/600/333'
-        },
-        {
-          name: 'Erik Wubbels Fotografie',
-          slug: 'erik-wubbels-fotografie',
-          link: 'https://erikwubbels.nl',
-          stack: ['Wordpress', 'SASS', 'WooCommerce', 'Docker'],
-          img: 'https://loremflickr.com/600/338'
-        },
-        // OTHER
-        {
-          name: 'Holdie',
-          slug: 'holdie',
-          link: '',
-          stack: ['Arduino'],
-          img: 'https://loremflickr.com/600/338'
-        },
-        {
-          name: 'Mugen',
-          slug: 'mugen',
-          link: '',
-          stack: ['Arduino'],
-          img: 'https://loremflickr.com/600/338'
-        },
-        {
-          name: 'Flowerscape',
-          slug: 'flowerscape',
-          link: '',
-          stack: ['Processing'],
-          img: 'https://loremflickr.com/600/338'
-        },
-      ],
-    }
-  },
-  methods: {
-    toggleInStackList(stack) {
-      // console.log(stack.toString())
-      // unlist "all projects" if other options are selected
-      if ( this.stack_search.includes('All Projects') && stack.title !== 'All Projects') {
-        this.stack_search = this.stack_search.filter(e => e !== 'All Projects')
-      }
-      // unlist other options if "all projects" is selected
-      if ( stack.title == 'All Projects' && this.stack_search.length > 0 ) {
-        this.stack_search = ['All Projects']
-        // console.log("HIER", this.stack_search)
-        return
-      }
-      if ( this.stack_search.includes(stack.title) ) {
-          this.stack_search = this.stack_search.filter(e => e !== stack.title)
-          // console.log('test', this.stack_search)
-      } else if ( !this.stack_search.includes(stack.title) ) {
-          this.stack_search.push(stack.title)
-          // console.log(stack.title)
-      }
-      return
-    },
-  },
-  computed: {
-    combinedFilter() {
-      // Return final array of projects matching the filter
-      if (this.stack_search.includes('All Projects')) this.current_filter = this.all_projects
-      // if (this.search !== '' && this.stack_search === 'All Projects') this.current_filter = this.all_projects.filter(project => project.name.toLowerCase().includes(this.search.toLowerCase()) )
-      if (!this.stack_search.includes('All Projects')) {
-        this.current_filter = this.all_projects
-        for ( let i = 0; i < this.stack_search.length; i++ ) {
-          this.current_filter = this.current_filter.filter(
-            project => 
-              project.stack.includes(this.stack_search[i]) 
-          )
-        }
-      }
-      return this.current_filter
-    },
-    projectsRemaining() {
-      let remaining = []
+import { useProjectStore } from "~~/stores/projects"
+import { useTechFilterStore } from "~~/stores/techFilter"
+import { usePersonaliaStore } from "~~/stores/personalia"
 
-      return remaining
-    },
+export default {
+  setup () {
+    const projectStore = useProjectStore()
+    const techFilterStore = useTechFilterStore()
+    const personaliaStore = usePersonaliaStore()
+    
+    const projectsFilter = ref('all')
+    // const wordpressFilter = projectStore.getProjectByTech("Wordpress")
+    // const filterActiveTech = projectStore.getProjectByTechFilter()
+    // const filterToggledTech = projectStore.toggledTechs
+
+    return { projectStore, projectsFilter, personaliaStore, techFilterStore }
   },
-  created() {
-    this.loaded = true;
-    this.stack_search = ["All Projects"]
-  }
 }
 </script>
 

@@ -1,14 +1,14 @@
 <template>
-  <div v-if="project" class="project-item" @click="projectHighlight">
+  <div v-if="projectData" class="project-item">
     <!-- MARKDOWN -->
     <div class="project-header">
-      <ContentDoc v-if="project" :path="`projects/${ project.slug }`"></ContentDoc>
-        <nuxt-link class="read-more-link" v-if="project" :to="{ path: 'projects/' + project.slug }">
+      <ContentDoc :path="`projects/${ projectData.slug }`"></ContentDoc>
+        <nuxt-link class="read-more-link" :to="{ path: 'projects/' + projectData.slug }">
           Visit project page
         </nuxt-link>
     </div>
     <div class="img-container">
-      <img :src="`${ project.img }`" alt="" />
+      <img :src="`${ projectData.img }`" alt="" />
     </div>
       <br>
   </div>
@@ -16,12 +16,7 @@
 
 <script>
 export default {
-  props: ['project'],
-  methods: {
-    projectHighlight() {
-      // console.log( "Hello" )
-    }
-  }
+  props: ['projectData'],
 }
 </script>
 
@@ -48,6 +43,8 @@ export default {
       margin-bottom: 80px;
       // border-right: 12px solid $lightest-blue;
       position: relative;
+      font-size: 1.2rem;
+      font-weight: 300;
       h1 {
           color: $light-blue;
           font-weight: 700;
@@ -75,17 +72,15 @@ export default {
         position: absolute;
         height: auto;
         background: $light-blue;
-        font-weight: 700;
+        // font-weight: 700;
         padding: 12px 24px;
         border: none;
         transition: .5s ease-out;
         color: $grey;
         text-decoration: none;
         &:hover {
-            color: #fff;
-            // animation
+            opacity: 0.5;
             transition: .5s ease-out;
-            transform: scale(1.05);
             animation: AnimationName 3s infinite;
         }
       }

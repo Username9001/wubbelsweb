@@ -28,25 +28,25 @@ export default defineNuxtConfig({
           // development
           // href: '/_nuxt/assets/fonts/Montserrat.ttf',
           // production
-          rel: 'preload',
+          // rel: 'preload',
           href: 'fonts/Montserrat.ttf',
           as: 'font',
           type: 'font/ttf',
-          importance: 'high',
-          crossorigin: 'anonymous',
-          display: 'swap'
+          // importance: 'high',
+          // crossorigin: 'anonymous',
+          // display: 'swap'
         },
         {
           // development
           // href: '/_nuxt/assets/fonts/Karrik-Regular.woff2',
           // production
-          rel: 'preload',
+          // rel: 'preload',
           href: 'fonts/Karrik-Regular.woff2',
           as: 'font',
           type: 'font/woff2',
-          importance: 'high',
-          crossorigin: 'anonymous',
-          display: 'swap'
+          // importance: 'high',
+          // crossorigin: 'anonymous',
+          // display: 'swap'
         },
         // { rel: 'manifest', href: '/manifest.json' }
       ]
@@ -59,7 +59,8 @@ export default defineNuxtConfig({
   ],
   modules: [
     '@nuxt/content',
-    '@pinia/nuxt'
+    '@pinia/nuxt',
+    '@pinia-plugin-persistedstate/nuxt',
   ],
   components: [{
     path: '~/components',

@@ -1,7 +1,6 @@
 import { defineStore } from 'pinia'
 import { useTechFilterStore } from './techFilter'
 const techFilter = useTechFilterStore()
-var selectedTechs = techFilter.showSelectedTechs
 
 export const useProjectStore = defineStore('projectStore', {
   state: () => ({
@@ -115,8 +114,8 @@ export const useProjectStore = defineStore('projectStore', {
         img: 'https://loremflickr.com/600/338'
       },
     ],
-    // selected_projects: []
   }),
+  persist: true,
   getters: {
     favs() {
       return this.projects.filter(p => p.isFav)
@@ -136,20 +135,30 @@ export const useProjectStore = defineStore('projectStore', {
       this.filtered_projects = []
 
       this.filtered_projects = this.projects.filter(p => 
-        p.stack.includes(this.tech_titles[0])
-        // && p.stack.includes(this.tech_titles[1])
+        p.stack.includes(this.toggledTechs[0])
       )
-      for ( let i = 0; i < this.tech_titles.length; i++ ) {
+      for ( let i = 0; i < this.toggledTechs.length; i++ ) {
         this.filtered_projects = this.filtered_projects.filter(p =>
-          p.stack.includes(this.tech_titles[i])
+          p.stack.includes(this.toggledTechs[i])
         )
       }
-
-      console.log(this.filtered_projects)
-
+      // console.log(this.filtered_projects)
       return this.filtered_projects
     },
+    getProjectsLeft: (state) => {
+      return (input) => state.projects.filter((p) => p.stack.includes(input))
+    },
+    projectsLeftWithStack()  {
+      this.projectsWithStack = []
 
+      // for ( let i = 0; i < this.projectsFiltered.length; i++ ) {
+      //   this.projectsWithStack = 
+      // }
+
+
+
+      return this.projectsFiltered.filter((p) => p.stack.includes("SASS"))
+    },
 
     favCount() {
       return this.projects.reduce((p, c) => {
@@ -159,40 +168,16 @@ export const useProjectStore = defineStore('projectStore', {
     totalCount: (state) => {
       return state.projects.length
     },
-    // filterTech: (input) => {
-    //   return this.projects.filter(p => p.stack.includes(input))
-    // },
-    getProjectById: (state) => {
-      return (projectId) => state.projects.find((project) => project.id === projectId)
+    filteredCount: (state) => {
+
     },
-    // getProjectByTech: (state) => {
-    //   console.log( "HIER", techFilter.showSelectedTechs )
-    //   return (projectTech) => state.projects.filter((project) => 
-    //     // TODO: loop through selected techs
-    //     project.stack.includes(projectTech)
-    //   )
-    // },
-    // getProjectByTechFilter: (state) => {
-    //   return (projectTech) => state.projects.filter((project) => 
-    //     // TODO: loop through selected techs
-    //     project.stack.includes(projectTech)
-    //   )
+    // getProjectById: (state) => {
+    //   return (projectId) => state.projects.find((project) => project.id === projectId)
     // },
   },
   actions: {
-    getFilteredProjects() {
-      let selected_projects = []
-      for ( let i = 0; i < techFilter.length; i++ ) {
-        console.log("tech filter:", techFilter[i])
-        this.selected_projects = this.projects.includes(
-          project => 
-            project.stack.includes(this.techFilter[i]) 
-        )
-      }
-      console.log("Filter Techs:", selected_projects)
 
-      return selected_projects
-    }
   }
+
 })
 

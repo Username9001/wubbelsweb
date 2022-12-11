@@ -1,19 +1,22 @@
 import { defineStore } from 'pinia'
+// import { useProjectStore } from './projects'
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 
 export const useTechFilterStore = defineStore('techFilterStore', {
     state: () => ({
       tech_options: [
-        { title: 'VueJS/NuxtJS', category: 'Frontend', toggled: true},
-        { title: 'SASS', category: 'Frontend', toggled: false},
-        { title: 'TypeScript', category: 'Frontend', toggled: false},
-        { title: 'Wordpress', category: 'Backend', toggled: false},
-        { title: 'Laravel', category: 'Backend', toggled: false},
-        { title: 'WooCommerce', category: 'Backend', toggled: false},
-        { title: 'Docker', category: 'Backend', toggled: false},
-        { title: 'Processing', category: 'Other', toggled: false},
-        { title: 'Arduino', category: 'Other', toggled: false},
+        { title: 'VueJS/NuxtJS', category: 'Frontend', toggled: false, counter: 0},
+        { title: 'SASS', category: 'Frontend', toggled: false, counter: 0},
+        { title: 'TypeScript', category: 'Frontend', toggled: false, counter: 0},
+        { title: 'Wordpress', category: 'Backend', toggled: false, counter: 0},
+        { title: 'Laravel', category: 'Backend', toggled: false, counter: 0},
+        { title: 'WooCommerce', category: 'Backend', toggled: false, counter: 0},
+        { title: 'Docker', category: 'Backend', toggled: false, counter: 0},
+        { title: 'Processing', category: 'Other', toggled: false, counter: 0},
+        { title: 'Arduino', category: 'Other', toggled: false, counter: 0},
       ]
     }),
+    persist: true,
     getters: {
       showAllTechs() {
         return this.tech_options
@@ -28,7 +31,12 @@ export const useTechFilterStore = defineStore('techFilterStore', {
         console.log("Selected:", selectedTech)
         selectedTech.toggled = !selectedTech.toggled
         console.log("Toggle state:", selectedTech.toggled)
-      }
+        // update project counters
+        for ( let i = 0; i < this.tech_options.length; i++ ) {
+          let new_count = 4
+          this.tech_options[i].counter = new_count
+        }
+      },
     }
   })
   

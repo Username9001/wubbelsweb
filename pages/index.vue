@@ -7,31 +7,20 @@
         <div class="search-wrapper" id="projects">
             <h1 class="grid-title">
               Portfolio
-              <!-- {{ projects }} -->
             </h1>
             <!-- STACK OPTIONS SEARCH -->
             <div class="filter" v-if="projectsFilter">
-              <button @click="projectsFilter = 'all'">All</button>
-              <button @click="projectsFilter = 'favs'">Favs</button>
-              <button @click="projectsFilter = 'toggledTechs'">toggledTechs</button>
+              <button class="filter-button" :class="{ activeFilter: projectsFilter === 'all' }" @click="projectsFilter = 'all'">All</button>
+              <button class="filter-button" :class="{ activeFilter: projectsFilter === 'toggledTechs' }" @click="projectsFilter = 'toggledTechs'">Filter</button>
+              <!-- <button @click="projectsFilter = 'favs'">Favs</button> -->
             </div>
-            <SearchSelectTech />
+            <SearchSelectTech v-if="projectsFilter === 'toggledTechs'" />
           </div>
-          {{ projectStore.toggledTechs }}
-          <hr>
-          {{ projectStore.toggledTechs.length }}
-          <hr>
-          {{ projectStore.projectsFiltered }}
-          <hr>
-          {{ techFilterStore.showSelectedTechs }}
-          <hr>
-          {{ projectStore.toggledTechs }}
-          <button @click="projectStore.getFilteredProjects">Filtered Projects</button>
-          <!-- {{ projectStore.projects }} -->
+
           <div id="project-grid">
             <transition-group name="list">
                 <Project v-if="projectsFilter === 'all'" v-for="project in projectStore.projects" :key="project.slug" :projectData="project" />
-                <Project v-if="projectsFilter === 'favs'" v-for="project in projectStore.favs" :key="project.slug" :projectData="project" />
+                <!-- <Project v-if="projectsFilter === 'favs'" v-for="project in projectStore.favs" :key="project.slug" :projectData="project" /> -->
                 <Project v-if="projectsFilter === 'toggledTechs'" v-for="project in projectStore.projectsFiltered" :key="project.slug" :projectData="project" />
             </transition-group>
           </div>
@@ -47,16 +36,13 @@ import { usePersonaliaStore } from "~~/stores/personalia"
 
 export default {
   setup () {
+    const personaliaStore = usePersonaliaStore()
     const projectStore = useProjectStore()
     const techFilterStore = useTechFilterStore()
-    const personaliaStore = usePersonaliaStore()
     
     const projectsFilter = ref('all')
-    // const wordpressFilter = projectStore.getProjectByTech("Wordpress")
-    // const filterActiveTech = projectStore.getProjectByTechFilter()
-    // const filterToggledTech = projectStore.toggledTechs
 
-    return { projectStore, projectsFilter, personaliaStore, techFilterStore }
+    return { personaliaStore, projectStore, techFilterStore, projectsFilter }
   },
 }
 </script>
@@ -82,62 +68,19 @@ export default {
   h4 {
     margin: 12px auto;
   }
-  button {
-    display: block;
-    padding: 8px;
-    font-family: 'Montserrat';
-    border: none;
-    color: $accent-color;
-  }
-  .stack-list {
-    width: 100%;
-    text-align: left;
-    margin-top: 24px;
-    // LABEL
-    .stack-option {
-      display: inline-block;
-      margin: 12px 12px 24px 0;
-      width: auto;
-      span {
-        padding: 12px;
-        background: $grey;
-        color: white;
-        // border-radius: 12px;
-        &:hover {
-          cursor: pointer;        
-        }
-      }
-      input[type="radio"] {
-        display: none;
-      }
-      input[type="radio"]:checked ~ *{
-        opacity: .5;
-        color: #fff;
-      }
-    }
-  }
-  // SEARCH TEXT INPUT
-  input[type="search"].text-search {
-    margin: 24px 4px;
+  .filter-button {
+    display: inline-block;
     padding: 12px;
-    display: block;
-    background: $accent-color;
-    color: #fff;
+    margin: 12px 12px 0 0;
+    width: fit-content;
+    font-family: 'Karrik';
+    font-size: 1.2rem;
     font-weight: 700;
-    border: none;
-    outline: 4px solid $accent-color;
-    transition: .3s ease;
-    &:focus-visible {
-      border: none;
-      box-shadow: 0 0 25px $accent-color;
-      padding: 12px;
-      transition: .25s ease;
-    }
+    color: $grey;
+    opacity: 0.6;
   }
-  ::placeholder {
-    color: #fff;
+  .activeFilter {
     opacity: 1;
-    text-shadow: 0 0 5px #fff;
   }
 }
 
@@ -167,7 +110,6 @@ export default {
   grid-column-gap: 128px;
   grid-row-gap: 128px;
   grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
-  min-height : 100vh;
   justify-items: center;
   @media (max-width: 840px) {
       grid-template-columns: auto;

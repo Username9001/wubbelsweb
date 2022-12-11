@@ -25,7 +25,7 @@ export default {
   display: block;
   position: relative;
   width: 100%;
-  min-height: 720px;
+  // min-height: 720px;
   list-style-type: none;
   text-align: left;
   padding: 36px 48px;

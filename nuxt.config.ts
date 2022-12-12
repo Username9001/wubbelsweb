@@ -57,6 +57,12 @@ export default defineNuxtConfig({
     '~/assets/css/main.scss',
     // '~/assets/style/global.scss'
   ],
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
   modules: [
     '@nuxt/content',
     '@pinia/nuxt',

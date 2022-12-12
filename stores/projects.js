@@ -133,17 +133,23 @@ export const useProjectStore = defineStore('projectStore', {
     },
     projectsFiltered() {
       this.filtered_projects = []
-
-      this.filtered_projects = this.projects.filter(p => 
-        p.stack.includes(this.toggledTechs[0])
-      )
-      for ( let i = 0; i < this.toggledTechs.length; i++ ) {
-        this.filtered_projects = this.filtered_projects.filter(p =>
-          p.stack.includes(this.toggledTechs[i])
+      // console.log(this.toggledTechs.length)
+      if ( this.toggledTechs.length > 0 ) {
+        this.filtered_projects = this.projects.filter(p => 
+          p.stack.includes(this.toggledTechs[0])
         )
+        for ( let i = 0; i < this.toggledTechs.length; i++ ) {
+          this.filtered_projects = this.filtered_projects.filter(p =>
+            p.stack.includes(this.toggledTechs[i])
+          )
+        }
+        // console.log(this.filtered_projects)
+        return this.filtered_projects
+      } 
+      else {
+        return this.projects
       }
-      // console.log(this.filtered_projects)
-      return this.filtered_projects
+
     },
     getProjectsLeft: (state) => {
       return (input) => state.projects.filter((p) => p.stack.includes(input))

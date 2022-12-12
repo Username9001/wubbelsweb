@@ -3,7 +3,7 @@
         <!-- Frontend -->
         <div class="column">
             <h2>Frontend</h2>
-            <div v-for="option in tech_options.filter(o => o.category == 'Frontend')" class="stack-option">
+            <div v-for="option in tech_options.filter(o => o.category == 'Frontend').sort((a, b) => (a.title.length > b.title.length) ? -1 : 1)" class="stack-option">
                 <button @click="techFilterStore.toggleTech(option.title)" :class="{ isActive: option.toggled }">
                     {{ option.title }} 
                     <!-- IF INCLUDED -->
@@ -21,7 +21,7 @@
         <!-- Backend -->
         <div class="column">
             <h2>Backend</h2>
-            <div v-for="option in tech_options.filter(o => o.category == 'Backend')" class="stack-option">
+            <div v-for="option in tech_options.filter(o => o.category == 'Backend').sort((a, b) => (a.title.length > b.title.length) ? -1 : 1)" class="stack-option">
                 <button @click="techFilterStore.toggleTech(option.title)" :class="{ isActive: option.toggled }">
                     {{ option.title }}
                     <!-- IF INCLUDED -->
@@ -29,8 +29,9 @@
                         ({{ projectStore.projectsFiltered.filter(p => p.stack.includes(option.title)).length }})
                     </div>
                     <!-- IF NOT INCLUDED -->
-                    <div v-if="techFilterStore.toggledTechs" style="display:inline">
+                    <div v-if="!projectStore.projectsFiltered.filter(p => p.stack.includes(option.title)).length" style="display:inline">
                         (0)
+                        {{ }}
                         {{ techFilterStore.toggledTechs }}
                     </div>
                 </button>
@@ -39,7 +40,7 @@
         <!-- Other -->
         <div class="column">
             <h2>Other</h2>
-            <div v-for="option in tech_options.filter(o => o.category == 'Other')" class="stack-option">
+            <div v-for="option in tech_options.filter(o => o.category == 'Other').sort((a, b) => (a.title.length > b.title.length) ? -1 : 1)" class="stack-option">
                 <button @click="techFilterStore.toggleTech(option.title)" :class="{ isActive: option.toggled }">
                     <!-- title -->
                     {{ option.title }}
@@ -58,9 +59,9 @@
             </div>
         </div>
         <br>
-        <div class="column">
+        <!-- <div class="column">
             Filtered Projects: {{ projectStore.projectsFiltered.length }}
-        </div>
+        </div> -->
     </div>
 </template>
 <script>
@@ -88,28 +89,32 @@ export default {
     text-align: left;
     margin-top: 24px;
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    .stack-option {
-      display: inline-block;
-      margin: 12px 12px 0 0;
-      width: auto;
-      button {
-        padding: 12px;
-        background: $grey;
-        color: white;
-        opacity: .75;
-        transition: .2s ease-out;
-        font-family: 'Karrik';
-        font-size: 1.2rem;
-        &:hover {
-          cursor: pointer;        
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    .column {
+        // display: grid;
+        // grid-template-columns: repeat(2, minmax(0, 1fr));
+        .stack-option {
+          display: block;
+          margin: 12px 12px 0 0;
+          width: auto;
+          button {
+            padding: 12px;
+            background: $grey;
+            color: white;
+            opacity: .75;
+            transition: .2s ease-out;
+            font-family: 'Karrik';
+            font-size: 1.2rem;
+            &:hover {
+              cursor: pointer;        
+            }
+          }
+          .isActive {
+            opacity: 1;
+            color: #fff;
+            transition: .2s ease-out;
+          }
         }
-      }
-      .isActive {
-        opacity: 1;
-        color: #fff;
-        transition: .2s ease-out;
-      }
     }
   }
 </style>

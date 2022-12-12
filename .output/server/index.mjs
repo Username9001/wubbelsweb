@@ -4,7 +4,7 @@ import 'https';
 import 'destr';
 import 'h3';
 export { n as default } from './chunks/nitro/node-server.mjs';
-import 'ohmyfetch';
+import 'ofetch';
 import 'unenv/runtime/fetch/index';
 import 'hookable';
 import 'scule';

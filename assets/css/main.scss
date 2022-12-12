@@ -16,6 +16,7 @@ body {
 }
 html, body {
   min-height: 100%;
+  overflow-x: hidden;
 }
 input[type=search]::-webkit-search-cancel-button {
   -webkit-appearance: searchfield-cancel-button;

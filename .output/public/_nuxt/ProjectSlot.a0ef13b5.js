@@ -1,0 +1,1 @@
+/* empty css                                                                    */import{_ as t}from"./_plugin-vue_export-helper.a1a6add7.js";import{r}from"./entry.089d8caf.js";const o={head(){return{title:"WubbelsWeb"}}};function s(e,n,a,c,d,p){return r(e.$slots,"excerpt",{},void 0,!0)}const u=t(o,[["render",s],["__scopeId","data-v-09f4d939"]]);export{u as default};

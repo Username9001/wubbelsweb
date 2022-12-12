@@ -116,7 +116,7 @@ export default {
 <style lang="scss">
     .stack-list {
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         h4 {
             margin-bottom: 0;
         }

@@ -163,6 +163,20 @@ header .text-box {
             margin: 82px auto;
             text-align: left;
         }
+        @media (max-width: 480px) {
+            margin: 0;
+            padding: 24px;
+            max-width: 100%;
+            &:nth-of-type(2) {
+            margin: 0;
+            text-align: right;
+            float: right;
+            }
+            &:nth-of-type(3) {
+                margin: 0;
+                text-align: left;
+            }
+        }
     }
     .img-container {
         display: block;
@@ -191,6 +205,9 @@ header .text-box {
         border: none;
         transition: .5s ease-out;
         opacity: 0.8;
+        @media (max-width: 840px) {
+            font-size: 1.2rem;
+        }
         a {
             color: #fff;
             text-shadow: 0 0 5px #000;
@@ -250,6 +267,9 @@ header .text-box {
         bottom: 24px;
         text-align: right;
         justify-content: right;
+        @media (max-width: 840px) {
+            margin-top: 0;
+        }
       }
 }
 </style>

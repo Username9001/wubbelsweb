@@ -148,17 +148,6 @@ export const useProjectStore = defineStore('projectStore', {
     getProjectsLeft: (state) => {
       return (input) => state.projects.filter((p) => p.stack.includes(input))
     },
-    projectsLeftWithStack()  {
-      this.projectsWithStack = []
-
-      // for ( let i = 0; i < this.projectsFiltered.length; i++ ) {
-      //   this.projectsWithStack = 
-      // }
-
-
-
-      return this.projectsFiltered.filter((p) => p.stack.includes("SASS"))
-    },
 
     favCount() {
       return this.projects.reduce((p, c) => {

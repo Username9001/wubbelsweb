@@ -46,8 +46,8 @@ header {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, calc(-50% - 164px));
     width: 840px;
+    transform: translate(-50%, calc(-50% - 164px));
     // margin: 180px auto 80px auto;
     letter-spacing: 1px;
     border-right: 32px solid $lightest-blue;
@@ -55,6 +55,7 @@ header {
       width: 70%;
       margin: auto;
       border-right: 12px solid $lightest-blue;
+      transform: translate(-50%, calc(-50% - 100px));
     }
     @media (max-width: 480px) {
       width: 90%;

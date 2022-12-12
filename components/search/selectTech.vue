@@ -5,8 +5,16 @@
             <h2>Frontend</h2>
             <div v-for="option in tech_options.filter(o => o.category == 'Frontend')" class="stack-option">
                 <button @click="techFilterStore.toggleTech(option.title)" :class="{ isActive: option.toggled }">
-                 {{ option.title }} 
-                 ({{ projectStore.projectsFiltered.filter(p => p.stack.includes(option.title)).length }})
+                    {{ option.title }} 
+                    <!-- IF INCLUDED -->
+                    <div v-if="projectStore.projectsFiltered.filter(p => p.stack.includes(option.title)).length" style="display:inline">
+                        ({{ projectStore.projectsFiltered.filter(p => p.stack.includes(option.title)).length }})
+                    </div>
+                    <!-- IF NOT INCLUDED -->
+                    <div v-if="techFilterStore.toggledTechs" style="display:inline">
+                        (0)
+                        {{ techFilterStore.toggledTechs }}
+                    </div>
                 </button>
             </div>
         </div>
@@ -15,8 +23,16 @@
             <h2>Backend</h2>
             <div v-for="option in tech_options.filter(o => o.category == 'Backend')" class="stack-option">
                 <button @click="techFilterStore.toggleTech(option.title)" :class="{ isActive: option.toggled }">
-                 {{ option.title }}
-                 ({{ projectStore.projectsFiltered.filter(p => p.stack.includes(option.title)).length }})
+                    {{ option.title }}
+                    <!-- IF INCLUDED -->
+                    <div v-if="projectStore.projectsFiltered.filter(p => p.stack.includes(option.title)).length" style="display:inline">
+                        ({{ projectStore.projectsFiltered.filter(p => p.stack.includes(option.title)).length }})
+                    </div>
+                    <!-- IF NOT INCLUDED -->
+                    <div v-if="techFilterStore.toggledTechs" style="display:inline">
+                        (0)
+                        {{ techFilterStore.toggledTechs }}
+                    </div>
                 </button>
             </div>
         </div>
@@ -27,7 +43,15 @@
                 <button @click="techFilterStore.toggleTech(option.title)" :class="{ isActive: option.toggled }">
                     <!-- title -->
                     {{ option.title }}
-                    ({{ projectStore.projectsFiltered.filter(p => p.stack.includes(option.title)).length }})
+                    <!-- IF INCLUDED -->
+                    <div v-if="projectStore.projectsFiltered.filter(p => p.stack.includes(option.title)).length" style="display:inline">
+                        ({{ projectStore.projectsFiltered.filter(p => p.stack.includes(option.title)).length }})
+                    </div>
+                    <!-- IF NOT INCLUDED -->
+                    <div v-if="techFilterStore.toggledTechs" style="display:inline">
+                        (0)
+                        {{ techFilterStore.toggledTechs }}
+                    </div>
                     <!-- counter -->
                     <!-- {{ }} -->
                 </button>
@@ -64,7 +88,7 @@ export default {
     text-align: left;
     margin-top: 24px;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     .stack-option {
       display: inline-block;
       margin: 12px 12px 0 0;

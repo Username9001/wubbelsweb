@@ -13,15 +13,15 @@
             <button class="filter-button" :class="{ activeFilter: searchTab === 'all' }" @click="searchTab = 'all'">All</button>
             <button class="filter-button" :class="{ activeFilter: searchTab === 'toggledTechs' }" @click="searchTab = 'toggledTechs'">Filter</button>
           </div>
-          <button v-if="searchTab === 'toggledTechs'" @click="andOr = !andOr" class="">
-            <small>Filters:</small>
-            <div :class="{ highlight: andOr }">
+          <div v-if="searchTab === 'toggledTechs'" @click="andOr = !andOr" class="">
+            <!-- <small>Filters:</small> -->
+            <button class="search-logic" :class="{ highlight: andOr }">
               Combine checked technologies
-            </div>
-            <div :class="{ highlight: !andOr }">
+            </button>
+            <button class="search-logic" :class="{ highlight: !andOr }">
               Include all checked technologies
-            </div>
-          </button>
+            </button>
+          </div>
           <SearchSelectTech v-if="searchTab === 'toggledTechs'" :andOr="andOr" />
         </div>
 
@@ -63,11 +63,6 @@ export default {
 </script>
 
 <style lang="scss">
-.highlight {
-  background: $grey;
-  color: #fff;
-  opacity: 0.8;
-}
 // FILTER 
 .search-wrapper {
   /* Positioning */
@@ -91,6 +86,21 @@ export default {
     // border-bottom: 2px solid $light-blue;
   }
   /* Nested Selectors */
+  .search-logic {
+    padding: 12px;
+    background: #002b38;
+    color: white;
+    opacity: 0.75;
+    transition: 0.2s ease-out;
+    font-family: "Karrik";
+    font-size: 1.2rem;
+    margin-right: 12px;
+    &.highlight {
+      background: $grey;
+      color: #fff;
+      opacity: 1;
+    }
+  }
   .grid-title {
     color: $grey;
     opacity: 0.8;

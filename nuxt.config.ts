@@ -2,14 +2,6 @@
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  meta: { 
-    name: 'Demo Site',
-    description: "Some juicy description",
-    charset: 'utf-8',
-    meta: [
-      { name: 'theme-color', content: '#ffdd67' }
-    ],
-  },
   runtimeConfig: {
     public: {
       baseURL: '/',
@@ -18,7 +10,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: 'WubbbelsWeb',
-      description: 'Base description',
+      // description: 'Base description',
       htmlAttrs: {
         lang: "en",  // it sets the language English    
       },
@@ -67,7 +59,23 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@pinia/nuxt',
     '@pinia-plugin-persistedstate/nuxt',
+    '@kevinmarrec/nuxt-pwa',
   ],
+  pwa: {
+    workbox: {
+      enabled: true
+    },
+    manifest: {
+      name: 'Portfolio Erik Wubbels',
+      short_name: 'PF EW',
+      theme_color: '#fff',
+      lang: 'en',
+    },
+    icon: {
+      fileName: 'icon.png',
+      // purpose: 'any'
+    }
+  },
   components: [{
     path: '~/components',
     global: true
@@ -80,9 +88,9 @@ export default defineNuxtConfig({
             },
         },
     },
-    optimization: {
-      minimize: true
-    },
+    // optimization: {
+    //   minimize: true
+    // },
   },
   nitro: {
     compressPublicAssets: {
@@ -92,4 +100,5 @@ export default defineNuxtConfig({
   },
   pages: true,
   ssr: false,
+  
 })

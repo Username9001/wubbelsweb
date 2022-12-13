@@ -1,5 +1,5 @@
 <template>
-  <div v-if="projectData" class="project-item">
+  <div v-if="projectData" class="project-item" :id="`p-${projectData.id}`">
     <!-- MARKDOWN -->
     <div class="project-header">
       <ContentDoc :path="`projects/${ projectData.slug }`"></ContentDoc>
@@ -8,7 +8,7 @@
         </nuxt-link>
     </div>
     <div class="img-container">
-      <img :src="`${ projectData.img }`" alt="" />
+      <img :src="projectData.img ? projectData.img : 'https://via.placeholder.com/600x335'" alt="Project Image" />
     </div>
       <br>
   </div>
@@ -38,6 +38,7 @@ export default {
   @media (max-width: 840px) {
     width: 80%;
   }
+   // Add a neon effect to the text
   .project-header {
       min-height: 180px;
       margin-bottom: 80px;

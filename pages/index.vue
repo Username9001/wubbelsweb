@@ -68,81 +68,90 @@ export default {
   color: #fff;
   opacity: 0.8;
 }
-.counter {
-  margin: auto;
-  width: $base-content-width;
-  display: block;
-}
 // FILTER 
 .search-wrapper {
-  max-width: $base-content-width;
-  margin: 220px auto 0 auto;
+  /* Positioning */
   position: relative;
   z-index: 2;
-  font-size: 1.2rem;
+  /* Display & Box Model */
+  max-width: $base-content-width;
+  margin: 220px auto 0 auto;
   border-right: 32px solid $grey;
+  /* Text */
+  font-size: 1.2rem;
+  /* Media Queries */
   @media (max-width: 840px) {
     width: 70%;
     border-right: 12px solid $grey;
   }
+
   @media (max-width: 480px) {
     width: 90%;
     border-right: none;
     // border-bottom: 2px solid $light-blue;
   }
+  /* Nested Selectors */
+  .grid-title {
+    color: $grey;
+    opacity: 0.8;
+    font-size: 3em;
+    font-weight: 700;
+    font-family: 'Montserrat';
+  }
   h4 {
     margin: 12px auto;
   }
+
   .filter-button {
+    /* Positioning */
     display: inline-block;
+    /* Display & Box Model */
     padding: 12px;
     margin: 12px 12px 0 0;
     width: fit-content;
+    /* Text */
     font-family: 'Karrik';
     font-size: 1.2rem;
     font-weight: 700;
     color: $grey;
     opacity: 0.6;
   }
+
   .activeFilter {
+    /* Other */
     opacity: 1;
   }
 }
-
-.grid-title {
+// COUNTER
+.counter {
+  margin-top: 24px;
   color: $grey;
-  opacity: 0.8;
-  font-size: 3em;
-  font-weight: 700;
-  font-family: 'Montserrat';
-  // padding-bottom: 116px;
+  margin: auto;
+  width: $base-content-width;
+  display: block;
 }
-.tech-title {
-  @media (max-width: 840px) {
-    max-width: 80%;
-    margin: auto;
-  }
-}
+// PROJECT GRID DISPLAY
 #project-grid {
+  /* Positioning */
+  position: relative;
+  z-index: 3;
+  /* Display & Box Model */
   max-width: $base-content-width;
   margin: 128px auto;
-  z-index: 3;
-  position: relative;
   padding: 0;
-  text-align: left;
   display: grid;
+  /* Grid */
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-column-gap: 128px;
   grid-row-gap: 128px;
   grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
   justify-items: center;
+  /* Text */
+  text-align: left;
+  /* Media Queries */
   @media (max-width: 840px) {
       grid-template-columns: auto;
       margin: 32px;
     }
-}
-.counter {
-  margin-top: 24px;
-  color: $grey;
 }
 </style>

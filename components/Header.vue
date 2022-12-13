@@ -1,8 +1,5 @@
 <template>
-    <header class="header">
-        <!-- <video ref="video" autoplay muted loop id="myVideo">
-            <source src="~/assets/video/clouds.mp4" type="video/mp4">
-        </video> -->
+    <header v-if="personalia" class="header" id="home-header">
         <div class="text-box">
             <p>Hello, my name is</p>
             <h1>{{ personalia.name }}</h1>
@@ -10,11 +7,11 @@
             <p class="about">
                 {{ personalia.description }}
             </p>
-            <NuxtLink to="#main" class="header-link">
+            <nuxt-link to="#main" class="header-link">
                 <button>
                     View projects
                 </button>
-            </NuxtLink>
+            </nuxt-link>
         </div>
     </header>
 </template>
@@ -22,9 +19,6 @@
 <script>
 export default {
     props: ['personalia'],
-    // mounted() {
-    //     this.$refs.video.playbackRate = .5;
-    // },
 }
 </script>
 
@@ -35,10 +29,8 @@ header {
   background: $grey;
   margin: auto;
   min-height: 100vh;
-  // padding: 72px 0;
   @media (max-width: 840px) {
     padding: 12px 0;
-    // min-height: fit-content;
   }
   color: #fff;
   .text-box {
@@ -48,8 +40,7 @@ header {
     left: 50%;
     width: $base-content-width;
     transform: translate(-50%, calc(-50% - 164px));
-    // margin: 180px auto 80px auto;
-    letter-spacing: 1px;
+    // letter-spacing: 1px;
     border-right: 32px solid $lightest-blue;
     @media (max-width: 840px) {
       width: 70%;
@@ -60,7 +51,6 @@ header {
     @media (max-width: 480px) {
       width: 90%;
       border-right: none;
-      // border-bottom: 2px solid $light-blue;
     }
     p:nth-child(1) {
       padding-top: 0;
@@ -105,7 +95,6 @@ header {
         button {
             background: $grey;
             color: #fff;
-            // opacity: 0.9;
             display: block;
             padding: 18px 24px;
             min-width: 120px;

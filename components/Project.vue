@@ -25,34 +25,41 @@ export default {
   display: block;
   position: relative;
   width: 100%;
-  // min-height: 720px;
+  height: auto;
   list-style-type: none;
   text-align: left;
-  padding: 36px 48px;
+  padding: 36px;
   background: $grey;
   color: white;
-  min-height: 300px;
-  height: 100%;
-  margin: 48px auto;
+  // min-height: 320px;
+  margin: 0;
   transition: .3s ease;
   @media (max-width: 840px) {
     width: 80%;
   }
+  @media (max-width: 480px) {
+      margin: auto;
+      width: 100%;
+  }
+  @media (max-width: 300px) {
+      margin: auto;
+      width: 90%;
+  }
    // Add a neon effect to the text
   .project-header {
-      min-height: 180px;
-      margin-bottom: 80px;
-      // border-right: 12px solid $lightest-blue;
+      min-height: 300px;
+      height: auto;
       position: relative;
-      // font-size: 1.2rem;
       font-weight: 300;
+      display: block;
+      margin-bottom: -24px;
       h1 {
           color: $light-blue;
           font-weight: 700;
           font-size: 1.4rem;
           text-transform: uppercase;
           margin: 0;
-          padding-bottom: 24px;
+          padding-bottom: 12px;
           display: block;
           font-family: 'Montserrat';
       }
@@ -87,18 +94,19 @@ export default {
         }
       }
   }
-  // .img-container {
-  img {
-    height: 180px;
+  .img-container {
+    display: block;
     object-fit: cover;
-    // height: auto;
+    height: 196px;
     width: 100%;
+    overflow: hidden;
     position: absolute;
     bottom: 0;
     left: 0;
-    // border-top: 36px solid $lightest-blue;
+    img {
+      height: auto;
+    }
   }
-  // }
   .used-tech {
     ul {
       list-style-type: none;

@@ -47,7 +47,6 @@ export default defineNuxtConfig({
   },
   css: [
     '~/assets/css/main.scss',
-    // '~/assets/style/global.scss'
   ],
   postcss: {
     plugins: {
@@ -68,7 +67,7 @@ export default defineNuxtConfig({
     manifest: {
       name: 'Portfolio Erik Wubbels',
       short_name: 'PF EW',
-      theme_color: '#fff',
+      theme_color: '#002b38',
       lang: 'en',
     },
     icon: {

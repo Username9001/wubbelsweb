@@ -76,7 +76,6 @@ export default {
     grid-template-columns: 1fr;
   }
   .tech {
-    // background: $gradient1;
     color: #fff;
     margin: 0 auto;
     padding: 12px;

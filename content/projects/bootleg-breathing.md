@@ -12,7 +12,10 @@ Industrial Design project
 
 #descriptionSlot
 Interactive musical speaker with directional sound.
-::
+
+#excerpt
+Free alternative to the Wim Hof Method app for guided breathing.
+
 <!-- # Bootleg Breathing
 ::project-slot
 Breathing app

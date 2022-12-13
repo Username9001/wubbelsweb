@@ -97,3 +97,13 @@
     transform: translateX(800px);
   }
   
+  // FILTER TRANSITIONS
+  .filters-enter-active, .filters-leave-active {
+    transition: all .4s ease-in-out !important;
+    // transition-delay: .5s !important;
+  }
+  .filters-enter-from, .filters-leave-to {
+    opacity: 0;
+    transform: translateY(-800px);
+  }
+  

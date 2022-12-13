@@ -29,7 +29,7 @@ export default {
 
 <style scoped lang="scss">
     nav {
-        padding: 64px;
+        padding: 32px;
         // padding-bottom: 0;
         @media (max-width: 840px) {
             padding: 48px;
@@ -51,7 +51,7 @@ export default {
             color: #fff;
             list-style-type: none;
             margin: auto;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             li {
                 display: inline-block;
                 vertical-align: middle;

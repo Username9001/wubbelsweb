@@ -12,8 +12,9 @@ Industrial Design project
 
 #descriptionSlot
 Interactive musical speaker with directional sound.
-::
 
+#excerpt
+Database containing lots of plants.
 
 <!-- # Plant DB
 ::project-slot

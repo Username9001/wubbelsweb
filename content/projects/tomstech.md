@@ -12,7 +12,9 @@ Industrial Design project
 
 #descriptionSlot
 Interactive musical speaker with directional sound.
-::
+
+#excerpt
+Web development for a technology journalist.
 
 <!-- # TomsTech
 ::project-slot

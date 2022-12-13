@@ -12,4 +12,7 @@ Industrial Design project
 
 #descriptionSlot
 Interactive musical speaker with directional sound.
-::
+
+#excerpt
+Interactive musical speaker with directional sound.
+

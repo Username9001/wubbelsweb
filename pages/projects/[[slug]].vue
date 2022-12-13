@@ -2,8 +2,11 @@
     <Transition>
         <div :key="$route.params.slug">
             <header v-if="$route.params.slug" class="header">
+                <!-- SAMPLE IMAGE -->
+                <img :src="`${ data.image1 }`" alt="Project image" class="header-popout-image" />
+
+                <!-- TEXT HEADER -->
                 <section class="text-box">
-                    <!-- <ContentDoc :path="`projects/${ $route.params.slug.toString() }`" class="project-header" /> -->
                     <ContentRenderer :value="data" >
                         <h1 v-if="data.title">{{ data.title }}</h1>
                         <p v-if="data.subtitle">{{ data.subtitle }}</p>
@@ -20,17 +23,21 @@
                     <!-- <ContentDoc :path="`projects/${ $route.params.slug.toString() }`" /> -->
                     <ContentRenderer :value="data">      
                         <h1>{{ data.title }}</h1>      
-                        <p>{{ data.introduction }}</p>
+                        <p>{{ data.description_1 }}</p>
                         <div class="img-container">
                             <img src="https://loremflickr.com/600/335" width="600" height="335"  alt="">
                             <small>Subscript for image</small>
                         </div>
-                        <p>{{ data.further_description }}</p>
+                        <p>{{ data.description_2 }}</p>
                         <div class="img-container container-large">
                             <img src="https://loremflickr.com/600/335" width="600" height="335"  alt="">
                             <small>Subscript for image</small>
                         </div>
-                        <p>{{ data.ending_description }}</p>
+                        <p>{{ data.description_3 }}</p>
+                        <br>
+                        <br>
+                        <br>
+                        <p> {{ data.description_4 }}</p>
                             <button class="to-website">
                                 <nuxt-link :to="data.link" target="_blank">
                                     Visit website
@@ -95,12 +102,34 @@ onMounted(() => {
 </script>
 
 <style scoped lang="scss">
-header .text-box {
-    padding-bottom: 96px !important;
-    .header-link {
-        &:hover {
-            opacity: 0.5;
-            transition: .5s ease-out;    
+header {
+    .header-popout-image {
+        opacity: 1;
+        position: absolute;
+        padding: 0;
+        width: 100%;
+        height: calc(100% + 164px);
+        object-fit: cover;
+        // top: 50%;
+        // left: 50%;
+        // width: auto;
+        // transform: translate(-50%, calc(-50% - 164px));      
+    }
+    .text-box {
+        // padding: 0;
+        display: none;
+        background: $grey;
+        opacity: 0.8;
+        left: auto;
+        top: auto;
+        right: 96px;
+        bottom: 96px;
+        transform: none;
+        .header-link {
+            &:hover {
+                opacity: 0.5;
+                transition: .5s ease-out;    
+            }
         }
     }
 }

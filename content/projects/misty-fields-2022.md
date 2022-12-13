@@ -10,9 +10,12 @@ introduction: Architecto voluptatem impedit magni obcaecati inventore expedita, 
 ::project-slot
 Industrial Design project
 
+#excerpt
+Web design and development for a music festival.
+
 #subtitle
 Interactive musical speaker with directional sound.
-::
+<!-- :: -->
 
 
 <!-- ---

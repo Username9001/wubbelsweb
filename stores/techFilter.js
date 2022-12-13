@@ -1,23 +1,10 @@
+import { tech_options } from './data/tech_options'
+
 import { defineStore } from 'pinia'
-// import { useProjectStore } from './projects'
-import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 
 export const useTechFilterStore = defineStore('techFilterStore', {
     state: () => ({
-      tech_options: [
-        { title: 'VueJS/NuxtJS', category: 'Frontend', toggled: false, counter: 0},
-        { title: 'SASS', category: 'Frontend', toggled: false, counter: 0},
-        { title: 'TypeScript', category: 'Frontend', toggled: false, counter: 0},
-        { title: 'Wordpress', category: 'Backend', toggled: false, counter: 0},
-        { title: 'Laravel', category: 'Backend', toggled: false, counter: 0},
-        { title: 'WooCommerce', category: 'Backend', toggled: false, counter: 0},
-        { title: 'Docker', category: 'Backend', toggled: false, counter: 0},
-        { title: 'Processing', category: 'Other', toggled: false, counter: 0},
-        { title: 'Arduino', category: 'Other', toggled: false, counter: 0},
-      ],
-      // filter_method: {
-      //   toggled: true,
-      // },
+      tech_options
     }),
     persist: true,
     getters: {
@@ -35,10 +22,6 @@ export const useTechFilterStore = defineStore('techFilterStore', {
         selectedTech.toggled = !selectedTech.toggled
         console.log("Toggle state:", selectedTech.toggled)
       },
-      // filterMethod() {
-      //   const filterMethod = this.filter_method
-      //   filterMethod.toggled = !filterMethod.toggled
-      // }
     }
   })
   

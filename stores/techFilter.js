@@ -14,7 +14,10 @@ export const useTechFilterStore = defineStore('techFilterStore', {
         { title: 'Docker', category: 'Backend', toggled: false, counter: 0},
         { title: 'Processing', category: 'Other', toggled: false, counter: 0},
         { title: 'Arduino', category: 'Other', toggled: false, counter: 0},
-      ]
+      ],
+      // filter_method: {
+      //   toggled: true,
+      // },
     }),
     persist: true,
     getters: {
@@ -31,12 +34,11 @@ export const useTechFilterStore = defineStore('techFilterStore', {
         console.log("Selected:", selectedTech)
         selectedTech.toggled = !selectedTech.toggled
         console.log("Toggle state:", selectedTech.toggled)
-        // update project counters
-        for ( let i = 0; i < this.tech_options.length; i++ ) {
-          let new_count = 4
-          this.tech_options[i].counter = new_count
-        }
       },
+      // filterMethod() {
+      //   const filterMethod = this.filter_method
+      //   filterMethod.toggled = !filterMethod.toggled
+      // }
     }
   })
   

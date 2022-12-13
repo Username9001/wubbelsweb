@@ -46,7 +46,7 @@ header {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 840px;
+    width: $base-content-width;
     transform: translate(-50%, calc(-50% - 164px));
     // margin: 180px auto 80px auto;
     letter-spacing: 1px;

@@ -94,7 +94,7 @@ body, html {
 .main {
   width: 100%;
   height: 100%;
-  // max-width: 840px;
+  // max-width: $base-content-width;
   // margin: auto;
   padding: 140px 0;
   background: $lightest-blue;

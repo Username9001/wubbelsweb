@@ -62,7 +62,7 @@ export default {
 
 <style lang="scss">
     .container {
-        max-width: 840px;
+        max-width: $base-content-width;
         margin: 120px auto;
     }
 </style>

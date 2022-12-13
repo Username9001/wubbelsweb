@@ -61,13 +61,13 @@ export default {
 <style lang="scss">
 .tech-title {
   color: #fff;
-  max-width: 840px;
+  max-width: $base-content-width;
   width: 100%;
   margin: 32px auto;
   font-size: 2rem;
 }
 .technologies {
-  max-width: 840px;
+  max-width: $base-content-width;
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

@@ -135,7 +135,7 @@ header .text-box {
 }
 .markdown-box {
     width: 100%;
-    max-width: 840px;
+    max-width: $base-content-width;
     margin: 140px auto;
     * {
         display: block;

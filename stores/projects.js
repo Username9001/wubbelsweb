@@ -131,28 +131,53 @@ export const useProjectStore = defineStore('projectStore', {
 
       return this.tech_titles
     },
-    projectsFiltered() {
-      this.filtered_projects = []
-      // console.log(this.toggledTechs.length)
+    projectsFilteredAnd() {
+      this.filter_method = 'and'
+      this.filtered_projects_and = []
       if ( this.toggledTechs.length > 0 ) {
-        this.filtered_projects = this.projects.filter(p => 
+        this.filtered_projects_and = this.projects.filter(p => 
           p.stack.includes(this.toggledTechs[0])
         )
         for ( let i = 0; i < this.toggledTechs.length; i++ ) {
-          this.filtered_projects = this.filtered_projects.filter(p =>
+          this.filtered_projects_and = this.filtered_projects_and.filter(p =>
             p.stack.includes(this.toggledTechs[i])
           )
         }
-        // console.log(this.filtered_projects)
-        return this.filtered_projects
       } 
       else {
-        return this.projects
+        this.filtered_projects_and = this.projects
+      }
+      return this.filtered_projects_and
+    },
+    projectsFilteredOr() {
+      this.filter_method = 'or'
+      this.filtered_projects_or = []
+      if (this.toggledTechs.length > 0) {
+        console.log("toggledTechs.length:", this.toggledTechs.length)
+        for (let j = 0; j < this.toggledTechs.length; j++) {
+          this.filtered_projects_or = this.filtered_projects_or.concat(
+            this.projects.filter(p => 
+              p.stack.includes(this.toggledTechs[j]) 
+              && !this.filtered_projects_or.includes(p)
+              )
+            )
+          console.log("After OR logic:", j)
+        }
+      } else {
+        this.filtered_projects_or = this.projects
+      }
+      return this.filtered_projects_or
+    },
+    getProjects() {
+      let current_projects = []
+      if ( this.filter_method === 'and' ) {
+        current_projects = this.filtered_projects_and.length
+      }
+      if ( this.filter_method === 'or' ) {
+        current_projects = this.filtered_projects_or.length
       }
 
-    },
-    getProjectsLeft: (state) => {
-      return (input) => state.projects.filter((p) => p.stack.includes(input))
+      return current_projects
     },
 
     favCount() {
@@ -162,9 +187,6 @@ export const useProjectStore = defineStore('projectStore', {
     },
     totalCount: (state) => {
       return state.projects.length
-    },
-    filteredCount: (state) => {
-
     },
     // getProjectById: (state) => {
     //   return (projectId) => state.projects.find((project) => project.id === projectId)

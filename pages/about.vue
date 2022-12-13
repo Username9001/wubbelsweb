@@ -98,7 +98,7 @@ defineProps({
 <style scoped lang="scss">
 .markdown-box {
     width: 100%;
-    max-width: 840px;
+    max-width: $base-content-width;
     margin: 140px auto;
     * {
         display: block;

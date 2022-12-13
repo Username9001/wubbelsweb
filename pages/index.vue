@@ -5,25 +5,39 @@
       <div id="main" class="main">
         <!-- PROJECT LOOKUP -->
         <div class="search-wrapper" id="projects">
-            <h1 class="grid-title">
-              Portfolio
-            </h1>
-            <!-- STACK OPTIONS SEARCH -->
-            <div class="filter" v-if="projectsFilter">
-              <button class="filter-button" :class="{ activeFilter: projectsFilter === 'all' }" @click="projectsFilter = 'all'">All</button>
-              <button class="filter-button" :class="{ activeFilter: projectsFilter === 'toggledTechs' }" @click="projectsFilter = 'toggledTechs'">Filter</button>
-              <!-- <button @click="projectsFilter = 'favs'">Favs</button> -->
+          <h1 class="grid-title">
+            Portfolio
+          </h1>
+          <!-- STACK OPTIONS SEARCH -->
+          <div class="filter" v-if="searchTab">
+            <button class="filter-button" :class="{ activeFilter: searchTab === 'all' }" @click="searchTab = 'all'">All</button>
+            <button class="filter-button" :class="{ activeFilter: searchTab === 'toggledTechs' }" @click="searchTab = 'toggledTechs'">Filter</button>
+          </div>
+          <button v-if="searchTab === 'toggledTechs'" @click="andOr = !andOr" class="">
+            <small>Filters:</small>
+            <div :class="{ highlight: andOr }">
+              Combine checked technologies
             </div>
-            <SearchSelectTech v-if="projectsFilter === 'toggledTechs'" />
-          </div>
+            <div :class="{ highlight: !andOr }">
+              Include all checked technologies
+            </div>
+          </button>
+          <SearchSelectTech v-if="searchTab === 'toggledTechs'" :andOr="andOr" />
+        </div>
 
-          <div id="project-grid">
-            <transition-group name="list">
-                <Project v-if="projectsFilter === 'all'" v-for="project in projectStore.projects" :key="project.slug" :projectData="project" />
-                <!-- <Project v-if="projectsFilter === 'favs'" v-for="project in projectStore.favs" :key="project.slug" :projectData="project" /> -->
-                <Project v-if="projectsFilter === 'toggledTechs'" v-for="project in projectStore.projectsFiltered" :key="project.slug" :projectData="project" />
-            </transition-group>
-          </div>
+        <!-- Counter  -->
+        <div class="counter">
+          {{ projectStore.getProjects }} Projects
+        </div>
+        
+        <div id="project-grid">
+          <transition-group name="list">
+              <Project v-if="searchTab === 'all'" v-for="project in projectStore.projects" :key="project.slug" :projectData="project" />
+              <!-- <Project v-if="searchTab === 'favs'" v-for="project in projectStore.favs" :key="project.slug" :projectData="project" /> -->
+              <Project v-if="searchTab === 'toggledTechs' && !andOr" v-for="project in projectStore.projectsFilteredOr" :key="project.slug" :projectData="project" />
+              <Project v-if="searchTab === 'toggledTechs' && andOr" v-for="project in projectStore.projectsFilteredAnd" :key="project.slug" :projectData="project" />
+          </transition-group>
+        </div>
       </div>
     </div>
   </Transition>
@@ -40,17 +54,28 @@ export default {
     const projectStore = useProjectStore()
     const techFilterStore = useTechFilterStore()
     
-    const projectsFilter = ref('all')
+    const searchTab = ref('all')
+    const andOr = ref(true)
 
-    return { personaliaStore, projectStore, techFilterStore, projectsFilter }
+    return { personaliaStore, projectStore, techFilterStore, searchTab, andOr }
   },
 }
 </script>
 
 <style lang="scss">
+.highlight {
+  background: $grey;
+  color: #fff;
+  opacity: 0.8;
+}
+.counter {
+  margin: auto;
+  width: $base-content-width;
+  display: block;
+}
 // FILTER 
 .search-wrapper {
-  max-width: 840px;
+  max-width: $base-content-width;
   margin: 220px auto 0 auto;
   position: relative;
   z-index: 2;
@@ -99,7 +124,7 @@ export default {
   }
 }
 #project-grid {
-  max-width: 840px;
+  max-width: $base-content-width;
   margin: 128px auto;
   z-index: 3;
   position: relative;

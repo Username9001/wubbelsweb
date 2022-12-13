@@ -14,7 +14,6 @@
             <button class="filter-button" :class="{ activeFilter: searchTab === 'toggledTechs' }" @click="searchTab = 'toggledTechs'">Filter</button>
           </div>
           <div v-if="searchTab === 'toggledTechs'" @click="andOr = !andOr" class="">
-            <!-- <small>Filters:</small> -->
             <button class="search-logic" :class="{ highlight: andOr }">
               Combine checked technologies
             </button>
@@ -25,18 +24,20 @@
           <SearchSelectTech v-if="searchTab === 'toggledTechs'" :andOr="andOr" />
         </div>
 
-        <!-- Counter  -->
-        <div class="counter">
-          {{ projectStore.getProjects }} Projects
-        </div>
         
-        <div id="project-grid">
-          <transition-group name="list">
-              <Project v-if="searchTab === 'all'" v-for="project in projectStore.projects" :key="project.slug" :projectData="project" />
-              <!-- <Project v-if="searchTab === 'favs'" v-for="project in projectStore.favs" :key="project.slug" :projectData="project" /> -->
-              <Project v-if="searchTab === 'toggledTechs' && !andOr" v-for="project in projectStore.projectsFilteredOr" :key="project.slug" :projectData="project" />
-              <Project v-if="searchTab === 'toggledTechs' && andOr" v-for="project in projectStore.projectsFilteredAnd" :key="project.slug" :projectData="project" />
-          </transition-group>
+        <div class="projects">
+          <!-- Counter  -->
+          <h2 class="counter">
+            {{ projectStore.getProjects }} Project<ins v-if="projectStore.getProjects !== 1">s</ins>
+          </h2>
+          <div id="project-grid">
+            <transition-group name="list">
+                <Project v-if="searchTab === 'all'" v-for="project in projectStore.projects" :key="project.slug" :projectData="project" />
+                <!-- <Project v-if="searchTab === 'favs'" v-for="project in projectStore.favs" :key="project.slug" :projectData="project" /> -->
+                <Project v-if="searchTab === 'toggledTechs' && !andOr" v-for="project in projectStore.projectsFilteredOr" :key="project.slug" :projectData="project" />
+                <Project v-if="searchTab === 'toggledTechs' && andOr" v-for="project in projectStore.projectsFilteredAnd" :key="project.slug" :projectData="project" />
+            </transition-group>
+          </div>
         </div>
       </div>
     </div>
@@ -132,36 +133,44 @@ export default {
     opacity: 1;
   }
 }
-// COUNTER
-.counter {
-  margin-top: 24px;
-  color: $grey;
-  margin: auto;
-  width: $base-content-width;
-  display: block;
-}
 // PROJECT GRID DISPLAY
-#project-grid {
-  /* Positioning */
-  position: relative;
-  z-index: 3;
-  /* Display & Box Model */
+.projects {
   max-width: $base-content-width;
   margin: 128px auto;
-  padding: 0;
-  display: grid;
-  /* Grid */
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-column-gap: 128px;
-  grid-row-gap: 128px;
-  grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
-  justify-items: center;
-  /* Text */
-  text-align: left;
-  /* Media Queries */
-  @media (max-width: 840px) {
-      grid-template-columns: auto;
-      margin: 32px;
-    }
+  // COUNTER
+  h2.counter {
+    font-size: 1.6rem;
+    margin-top: 24px;
+    color: $grey;
+    margin: auto;
+    width: $base-content-width;
+    display: block;
+    grid-column: span 2;
+    opacity: 0.9;
+  }
+  #project-grid {
+    /* Positioning */
+    position: relative;
+    z-index: 3;
+    /* Display & Box Model */
+    padding: 0;
+    display: grid;
+    /* Grid */
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-column-gap: 128px;
+    grid-row-gap: 128px;
+    grid-template-rows: repeat(auto-fill, 1fr);
+    justify-items: center;
+    /* Text */
+    text-align: left;
+    // &:nth-child(2) {
+    //   grid-row-gap: 12px;
+    // }
+    /* Media Queries */
+    @media (max-width: 840px) {
+        grid-template-columns: auto;
+        margin: 32px;
+      }
+  }
 }
 </style>

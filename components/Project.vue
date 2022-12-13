@@ -44,7 +44,7 @@ export default {
       margin-bottom: 80px;
       // border-right: 12px solid $lightest-blue;
       position: relative;
-      font-size: 1.2rem;
+      // font-size: 1.2rem;
       font-weight: 300;
       h1 {
           color: $light-blue;
@@ -57,6 +57,7 @@ export default {
           font-family: 'Montserrat';
       }
       p {
+        font-family: 'Montserrat';
         max-width: 90%;
         opacity: 0.95;
       }

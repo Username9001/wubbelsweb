@@ -170,14 +170,21 @@ export const useProjectStore = defineStore('projectStore', {
     },
     getProjects() {
       let current_projects = []
+      current_projects = this.projects.length
       if ( this.filter_method === 'and' ) {
         current_projects = this.filtered_projects_and.length
       }
       if ( this.filter_method === 'or' ) {
         current_projects = this.filtered_projects_or.length
       }
+      // if ( this.filter_method === 'all') {
+      //   current_projects = this.projects
+      // }
 
       return current_projects
+    },
+    getFilterMethod() {
+      return this.filter_method
     },
 
     favCount() {

@@ -2,10 +2,11 @@
   <div v-if="projectData" class="project-item" :id="`p-${projectData.id}`">
     <!-- MARKDOWN -->
     <div class="project-header">
-      <ContentDoc :path="`projects/${ projectData.slug }`"></ContentDoc>
-        <nuxt-link class="read-more-link" :to="{ path: 'projects/' + projectData.slug }">
-          Visit project page
-        </nuxt-link>
+      <ContentDoc noMeta :path="`projects/${ projectData.slug }`"></ContentDoc>
+      
+      <nuxt-link class="read-more-link" :to="{ path: 'projects/' + projectData.slug }">
+        Visit project page
+      </nuxt-link>
     </div>
     <div class="img-container">
       <img :src="projectData.img ? projectData.img : 'https://via.placeholder.com/600x335'" alt="Project Image" />
@@ -16,6 +17,11 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: "WubbelsWeb"    
+    }
+  },
   props: ['projectData'],
 }
 </script>
@@ -28,7 +34,7 @@ export default {
   height: auto;
   list-style-type: none;
   text-align: left;
-  padding: 36px;
+  padding: 24px;
   background: $grey;
   color: white;
   // min-height: 320px;
@@ -47,7 +53,7 @@ export default {
   }
    // Add a neon effect to the text
   .project-header {
-      min-height: 300px;
+      min-height: 340px;
       height: auto;
       position: relative;
       font-weight: 300;
@@ -104,6 +110,9 @@ export default {
     bottom: 0;
     left: 0;
     img {
+      height: auto;
+    }
+    @media (max-width: 420px) {
       height: auto;
     }
   }

@@ -38,7 +38,6 @@
           <div id="project-grid">
             <transition-group name="list">
                 <Project v-if="searchTab === 'all'" v-for="project in projectStore.projectsFilteredAll" :key="project.slug" :projectData="project" />
-                <!-- <Project v-if="searchTab === 'favs'" v-for="project in projectStore.favs" :key="project.slug" :projectData="project" /> -->
                 <Project v-if="searchTab === 'toggledTechs' && !andOr" v-for="project in projectStore.projectsFilteredOr" :key="project.slug" :projectData="project" />
                 <Project v-if="searchTab === 'toggledTechs' && andOr" v-for="project in projectStore.projectsFilteredAnd" :key="project.slug" :projectData="project" />
             </transition-group>
@@ -55,6 +54,11 @@ import { useTechFilterStore } from "~~/stores/techFilter"
 import { usePersonaliaStore } from "~~/stores/personalia"
 
 export default {
+  head() {
+    return {
+      title: "WubbelsWeb"    
+    };
+  },
   setup () {
     const personaliaStore = usePersonaliaStore()
     const projectStore = useProjectStore()
@@ -69,6 +73,7 @@ export default {
   },
 }
 </script>
+
 
 <style lang="scss">
 // FILTER 
@@ -108,6 +113,14 @@ export default {
       background: $grey;
       color: #fff;
       opacity: 1;
+    }
+    @media (max-width: 840px) {
+      &:first-of-type {
+        margin-bottom: 12px;
+      }
+    }
+    @media (max-width: 420px) {
+      width: 100%;
     }
   }
   .grid-title {
@@ -156,7 +169,8 @@ export default {
     grid-column: span 2;
     opacity: 0.9;
     @media (max-width: 840px) {
-      margin-left: 84px;
+      margin: auto;
+      max-width: 80%;
     }
   }
   #project-grid {

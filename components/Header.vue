@@ -65,6 +65,10 @@ header {
             font-size: 3rem;
             font-weight: 300;
         }
+        @media (max-width: 420px) {
+            font-size: 2rem;
+            font-weight: 300;
+        }
         &:nth-of-type(1) {
             opacity: 0.9;
         }
@@ -76,8 +80,12 @@ header {
       p {
         font-size: 1.2rem;
         max-width: 50%;
+        font-family: 'Montserrat';
         @media (max-width: 840px) {
             max-width: 90%;
+        }
+        @media (max-width: 840px) {
+            font-size: 1.1rem;
         }
         padding: 48px 0;
         &:nth-of-type(1) {

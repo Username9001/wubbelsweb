@@ -57,24 +57,24 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 
-defineProps({
-  title: {
-    type: String,
-    default: 'Default title'
-  },
-  description: {
-    type: String,
-    default: 'Default description'
-  },
-  further_description: {
-    type: String,
-    default: 'Default description'
-  },
-  ending_description: {
-    type: String,
-    default: 'Default description'
-  },
-})
+// defineProps({
+//   title: {
+//     type: String,
+//     default: 'Default title'
+//   },
+//   description: {
+//     type: String,
+//     default: 'Default description'
+//   },
+//   further_description: {
+//     type: String,
+//     default: 'Default description'
+//   },
+//   ending_description: {
+//     type: String,
+//     default: 'Default description'
+//   },
+// })
 
 const route = useRoute()
 

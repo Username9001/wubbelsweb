@@ -1,14 +1,14 @@
 <template>
-    <!-- <div> -->
-      <!-- <p>
+    <div>
+      <p>
         <slot />
       </p>
       <small>
         <slot name="subtitle" />
-      </small> -->
+      </small>
       <slot name="excerpt" />
       <!-- <slot name="description" /> -->
-    <!-- </div> -->
+    </div>
 </template>
 <script>
 export default {

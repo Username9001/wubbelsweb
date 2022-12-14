@@ -5,10 +5,10 @@
 </template>
 <script>
 export default {
-    head() {
-      return {
-        title: "WubbelsWeb"    
-      };
-    },
+    // head() {
+    //   return {
+    //     title: "WubbelsWeb"    
+    //   };
+    // },
 };
 </script>

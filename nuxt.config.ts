@@ -56,6 +56,19 @@ export default defineNuxtConfig({
   },
   modules: [
     '@nuxt/content',
+    [
+      '@nuxtjs/i18n',
+      {
+        defaultLocale: 'en',
+        locales: [
+          {
+            code: 'en',
+            name: 'English',
+            file: 'en.js'
+          },
+        ]
+      }
+    ],
     '@pinia/nuxt',
     '@pinia-plugin-persistedstate/nuxt',
     '@kevinmarrec/nuxt-pwa',
@@ -65,8 +78,8 @@ export default defineNuxtConfig({
       enabled: true
     },
     manifest: {
-      name: 'Portfolio Erik Wubbels',
-      short_name: 'PF EW',
+      name: 'WubbelsWeb',
+      short_name: 'WW',
       theme_color: '#002b38',
       lang: 'en',
     },

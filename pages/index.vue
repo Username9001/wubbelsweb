@@ -41,12 +41,14 @@
         
         <div class="projects">
           <!-- Counter  -->
-          <h2 v-if="searchTab !== 'all'" class="counter">
-            {{ projectStore.getProjectsLength }} Project<ins v-if="projectStore.getProjectsLength !== 1">s</ins>
-          </h2>
-          <h2 v-if="searchTab === 'all'" class="counter">
-            {{ projectStore.projects.length }} Projects
-          </h2>
+          <transition-group name="list">
+            <h2 v-if="searchTab !== 'all'" class="counter">
+              {{ projectStore.getProjectsLength }} Project<ins v-if="projectStore.getProjectsLength !== 1">s</ins>
+            </h2>
+            <h2 v-if="searchTab === 'all'" class="counter">
+              {{ projectStore.projects.length }} Projects
+            </h2>
+          </transition-group>
           <div id="project-grid">
             <transition-group name="list">
                 <Project v-if="searchTab === 'all'" v-for="project in projectStore.projectsFilteredAll" :key="project.slug" :projectData="project" />

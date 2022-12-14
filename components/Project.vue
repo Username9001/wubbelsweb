@@ -2,7 +2,7 @@
   <div v-if="projectData" class="project-item" :id="`p-${projectData.id}`">
     <!-- MARKDOWN -->
     <div class="project-header">
-      <ContentDoc noMeta :path="`projects/${ projectData.slug }`"></ContentDoc>
+      <ContentDoc :path="`projects/${ projectData.slug }`"></ContentDoc>
       
       <nuxt-link class="read-more-link" :to="{ path: 'projects/' + projectData.slug }">
         Visit project page

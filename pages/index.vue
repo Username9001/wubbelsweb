@@ -1,5 +1,17 @@
 <template>
   <Transition>
+    <!-- <ContentDoc :path="`projects/${ projectData.slug }`"></ContentDoc> -->
+    
+      <!-- <ContentRenderer v-if="projectData" :value="projectData">      
+        <h1>{{ projectData.title }}</h1>      
+        <ContentRendererMarkdown :value="projectData" />    
+      </ContentRenderer> -->
+
+      <!-- <ContentRenderer :path="`projects/${ projectData.slug }`" :value="projectData">
+        <h1>{{ projectData.title }}</h1>
+        <ContentRendererMarkdown :value="projectData" />
+      </ContentRenderer> -->
+
     <div id="portfolio" v-if="projectStore">
       <Header :personalia="personaliaStore.personalia" />
       <div id="main" class="main">

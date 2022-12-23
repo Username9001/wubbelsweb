@@ -6,7 +6,8 @@ further_description:
     "In summary, Bootleg Breathing is a website/webapp that provides a free alternative to the Wim Hof Method app for guided breathing. It was created as a way to make guided breathing exercises accessible to everyone, regardless of their financial situation."
 ending_description: 
     ""
-link: https://tomstech.nl
+link: https://bb.wubbelsweb.com
+img: bootleg.jpg
 excerpt: Afrchitecto voluptatem impedit magni obcaecati inventore expedita, molestias libero facilis similique? Expedita, delectus.
 introduction: Architecto voluptatem impedit magni obcaecati inventore expedita, molestias libero facilis similique? Expedita, delectus.
 ---

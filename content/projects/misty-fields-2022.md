@@ -7,6 +7,7 @@ further_description:
 ending_description: 
     "In summary, Misty Fields 2022 is a professionally designed and developed website that serves as the online hub for a popular music festival. The site includes all the necessary information for attendees and helps to create excitement and anticipation for the event."
 link: https://mistyfields.com
+img: mf_2022.jpg
 excerpt: "Misty Fields 2022 is a website for a three-day music festival featuring a clean and modern design. Developed using Wordpress and SASS, the site showcases the lineup of performers and provides all necessary information for attendees."
 introduction: Architecto voluptatem impedit magni obcaecati inventore expedita, molestias libero facilis similique? Expedita, delectus.
 ---

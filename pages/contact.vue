@@ -7,7 +7,14 @@
                     <h1>Feel free to contact me</h1>
                     <h1>Mail me below</h1>
                     <p>Need a new website for your company? Or have an interesting project you could use some web development help with?</p>
-                    <EmailButton />
+                    <div class="button-container">
+                        <EmailButton />
+                        <NuxtLink to="#contact" class="header-link">
+                            <button>
+                                Continue reading
+                            </button>
+                        </NuxtLink>
+                    </div>
                 </section>
             </header>
             <div class="main" id="contact" v-if="expanded">
@@ -73,12 +80,19 @@ defineProps({
 
 </script>
 <style scoped lang="scss">
+header .text-box .header-link {
+    display: inline-block !important;
+    margin-right: 48px;
+}
 .markdown-box {
     width: 100%;
     max-width: $base-content-width;
     margin: 140px auto;
     * {
         display: block;
+    }
+    .button-container {
+        width: 100%;
     }
     h1 {
         font-size: 6rem;

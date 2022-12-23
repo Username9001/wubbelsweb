@@ -7,11 +7,11 @@
                         <h2>Home</h2>
                     </NuxtLink>
                 </li>
-                <li>
+                <!-- <li>
                     <NuxtLink to="/about">
                         <h2>About</h2>
                     </NuxtLink>
-                </li>
+                </li> -->
                 <li>
                     <NuxtLink to="/contact">
                         <h2>Contact</h2>

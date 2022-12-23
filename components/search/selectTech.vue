@@ -38,26 +38,20 @@
             </div>
         </div>
         <!-- Other -->
-        <div class="column">
+        <!-- <div class="column">
             <h2>Other</h2>
             <div v-for="option in tech_options.filter(o => o.category == 'Other').sort((a, b) => (a.title.length > b.title.length) ? -1 : 1)" class="stack-option">
                 <button @click="techFilterStore.toggleTech(option.title)" :class="[{ isActive: option.toggled }, { noneLeft: andOr && projectStore.projectsFilteredAnd.filter(p => p.stack.includes(option.title)).length == 0 }]">
-                    <!-- title -->
+
                     {{ option.title }}
-                    <!-- IF INCLUDED -->
-                    <!-- <div v-if="andOr && projectStore.projectsFilteredAnd.filter(p => p.stack.includes(option.title)).length" style="display:inline">
-                        ({{ projectStore.projectsFilteredAnd.filter(p => p.stack.includes(option.title)).length }})
-                    </div> -->
-                    <!-- IF NOT INCLUDED -->
+
                     <div v-if="techFilterStore.toggledTechs" style="display:inline">
                         (0)
                         {{ techFilterStore.toggledTechs }}
                     </div>
-                    <!-- counter -->
-                    <!-- {{ }} -->
                 </button>
             </div>
-        </div>
+        </div> -->
         <br>
         <!-- <div class="column">
             Filtered Projects: {{ projectStore.projectsFilteredAnd.length }}

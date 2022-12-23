@@ -7,6 +7,7 @@ further_description:
 ending_description: 
     ""
 link: https://tomstech.nl
+img: tomstech.jpg
 excerpt: Afrchitecto voluptatem impedit magni obcaecati inventore expedita, molestias libero facilis similique? Expedita, delectus.
 introduction: Architecto voluptatem impedit magni obcaecati inventore expedita, molestias libero facilis similique? Expedita, delectus.
 ---

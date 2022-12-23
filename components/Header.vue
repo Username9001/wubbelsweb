@@ -1,7 +1,7 @@
 <template>
     <header v-if="personalia" class="header" id="home-header">
         <div class="text-box">
-            <p>Hello, my name is</p>
+            <p>Hello, and welcome at</p>
             <h1>{{ personalia.name }}</h1>
             <h1>I create websites</h1>
             <p class="about">

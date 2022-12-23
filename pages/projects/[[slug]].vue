@@ -1,10 +1,12 @@
 <template lang="">
     <Transition>
-        <div :key="$route.params.slug">
+        <div>
+        <!-- {{ projectStore.getProjectById(5) }} -->
+        <div :key="$route.params.slug" v-if="data">
             <header v-if="$route.params.slug" class="header">
                 <!-- SAMPLE IMAGE -->
-                <img :src="`${ data.image1 }`" alt="Project image" class="header-popout-image" />
-
+                <img :src="'/img/' + data.img" alt="Project Image" class="header-popout-image" />
+                <!-- <img :src="`${ data.image1 }`" alt="Project image" class="header-popout-image" /> -->
                 <!-- TEXT HEADER -->
                 <section class="text-box">
                     <ContentRenderer :value="data" >
@@ -23,23 +25,19 @@
                     <!-- <ContentDoc :path="`projects/${ $route.params.slug.toString() }`" /> -->
                     <ContentRenderer :value="data">      
                         <h1>{{ data.title }}</h1>      
-                        <p>{{ data.description_1 }}</p>
-                        <div class="img-container">
+                        <p>{{ data.description }}</p>
+                        <!-- <div class="img-container">
                             <img src="https://loremflickr.com/600/335" width="600" height="335"  alt="">
                             <small>Subscript for image</small>
-                        </div>
-                        <p>{{ data.description_2 }}</p>
-                        <div class="img-container container-large">
+                        </div> -->
+                        <p>{{ data.further_description }}</p>
+                        <!-- <div class="img-container container-large">
                             <img src="https://loremflickr.com/600/335" width="600" height="335"  alt="">
                             <small>Subscript for image</small>
-                        </div>
-                        <p>{{ data.description_3 }}</p>
-                        <br>
-                        <br>
-                        <br>
-                        <p> {{ data.description_4 }}</p>
+                        </div> -->
+                        <p>{{ data.ending_description }}</p>
                         <div class="end-buttons">
-                            <button class="to-website">
+                            <button v-if="data.link" class="to-website">
                                 <nuxt-link :to="data.link" target="_blank">
                                     Visit website
                                 </nuxt-link>
@@ -53,6 +51,7 @@
                     </ContentRenderer>
                 </div>
             </div>
+        </div>
         </div>
     </Transition>
 </template>
@@ -100,18 +99,36 @@ onMounted(() => {
     refreshAll()
 });
 // refreshAll()
-
 </script>
+<!-- 
+<script lang="ts">
+
+export default {
+//   head() {
+//     return {
+//       title: "WubbelsWeb"    
+//     };
+//   },
+  setup () {
+    const projectStore = useProjectStore()
+
+    const currentProject = projectStore.getProjectById(1)
+
+    return { projectStore, currentProject }
+  },
+}
+</script> -->
 
 <style scoped lang="scss">
 header {
+    position: relative;
     .header-popout-image {
         opacity: 1;
         position: absolute;
         padding: 0;
         width: 100%;
-        height: calc(100% + 164px);
-        object-fit: cover;
+        height: calc(80%);
+        object-fit: contain;
         // top: 50%;
         // left: 50%;
         // width: auto;
@@ -172,6 +189,7 @@ header {
         display: block;
     }
     h1 {
+        font-family: 'Karrik';
         font-size: 6rem;
         color: $grey;
         // margin-bottom: 96px;

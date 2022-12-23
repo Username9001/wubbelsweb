@@ -6,7 +6,7 @@ export const projects = [
       slug: 'misty-fields-2022',
       link: 'https://mistyfields.com',
       stack: ['Wordpress', 'SASS'],
-      img: 'https://loremflickr.com/600/335'
+      img: 'mf_2022.jpg'
     },
     {
       id: 2,
@@ -15,7 +15,7 @@ export const projects = [
       slug: 'misty-fields-2019',
       link: 'https://mistyfields.com',
       stack: ['Wordpress', 'SASS'],
-      img: 'https://loremflickr.com/600/337'
+      img: 'mf_2019.jpg'
     },
     {
       id: 3,
@@ -24,7 +24,7 @@ export const projects = [
       slug: 'tomstech',
       link: 'https://tomstech.nl',
       stack: ['Wordpress', 'SASS'],
-      img: 'https://loremflickr.com/600/339'
+      img: 'tomstech.jpg'
     },
     {
       id: 4,
@@ -33,7 +33,7 @@ export const projects = [
       slug: 'pineapple-productions',
       link: 'https://pp.wubbelsweb.com',
       stack: ['Wordpress', 'SASS'],
-      img: 'https://loremflickr.com/600/331'
+      img: 'pineapple.jpg'
     },
     {
       id: 5,
@@ -42,7 +42,7 @@ export const projects = [
       slug: 'bootleg-breathing',
       link: 'https://bb.wubbelsweb.com',
       stack: ['VueJS/NuxtJS', 'Bootstrap', 'SASS'],
-      img: '/img/test.jpg'
+      img: 'bootleg.jpg'
     },
     {
       id: 6,
@@ -51,7 +51,7 @@ export const projects = [
       slug: 'plant-db',
       link: 'https://plantnet.wubbelsweb.com/species',
       stack: ['VueJS/NuxtJS', 'Bootstrap', 'SASS', 'Laravel', 'GraphQL', 'MongoDB', 'Docker'],
-      img: 'https://loremflickr.com/600/334'
+      img: 'plantdb.jpg'
     },
     {
       id: 7,
@@ -59,16 +59,16 @@ export const projects = [
       name: 'Bits of Freedom',
       slug: 'bits-of-freedom',
       stack: ['Bootstrap', 'Vanilla JS', 'SASS'],
-      img: 'https://loremflickr.com/600/332'
+      // img: 'https://loremflickr.com/600/332'
     },
-    {
-      id: 8,
-      isFav: false,
-      name: 'DAGDice',
-      slug: 'dagdice',
-      stack: ['Adobe XD', 'VueJS/NuxtJS', 'GraphQL', 'TypeScript',  'Docker'],
-      img: 'https://loremflickr.com/600/333'
-    },
+    // {
+    //   id: 8,
+    //   isFav: false,
+    //   name: 'DAGDice',
+    //   slug: 'dagdice',
+    //   stack: ['Adobe XD', 'VueJS/NuxtJS', 'GraphQL', 'TypeScript',  'Docker'],
+    //   img: 'https://loremflickr.com/600/333'
+    // },
     {
       id: 9,
       isFav: true,
@@ -76,7 +76,7 @@ export const projects = [
       slug: 'erik-wubbels-fotografie',
       link: 'https://erikwubbels.nl',
       stack: ['Wordpress', 'SASS', 'WooCommerce', 'Docker'],
-      img: 'https://loremflickr.com/600/338'
+      img: 'ewfotografie.jpg'
     },
     // OTHER
     // {

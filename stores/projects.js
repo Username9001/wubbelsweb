@@ -93,9 +93,9 @@ export const useProjectStore = defineStore('projectStore', {
     totalCount: (state) => {
       return state.projects.length
     },
-    // getProjectById: (state) => {
-    //   return (projectId) => state.projects.find((project) => project.id === projectId)
-    // },
+    getProjectById: (state) => {
+      return (projectId) => state.projects.find((project) => project.id === projectId)
+    },
   },
   actions: {
     updateProjectsLength() {

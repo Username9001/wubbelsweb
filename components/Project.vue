@@ -5,11 +5,13 @@
       <ContentDoc :path="`projects/${ projectData.slug }`"></ContentDoc>
       
       <nuxt-link class="read-more-link" :to="{ path: 'projects/' + projectData.slug }">
-        Visit project page
+        Read more
       </nuxt-link>
     </div>
-    <div class="img-container">
-      <img :src="projectData.img ? projectData.img : 'https://via.placeholder.com/600x335'" alt="Project Image" />
+    <div v-if="projectData.img" class="img-container">
+      <!-- <img :src="projectData.img ? projectData.img : 'https://via.placeholder.com/600x335'" alt="Project Image" /> -->
+      <img :src="'/img/' + projectData.img" alt="Project Image" />
+      <!-- <img src="~/assets/img/tomstech.jpg" alt="Project Image" /> -->
     </div>
       <br>
   </div>
@@ -91,7 +93,7 @@ export default {
         position: absolute;
         height: auto;
         background: $light-blue;
-        // font-weight: 700;
+        font-weight: 700;
         padding: 12px 24px;
         border: none;
         transition: .5s ease-out;
@@ -117,7 +119,9 @@ export default {
     left: 0;
     border-radius: 0 0 15px 15px;
     img {
-      height: auto;
+      height: 180px;
+      width: 100%;
+      object-fit: cover;
     }
     @media (max-width: 420px) {
       height: auto;

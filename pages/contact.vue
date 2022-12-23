@@ -9,16 +9,15 @@
                     <p>Need a new website for your company? Or have an interesting project you could use some web development help with?</p>
                     <div class="button-container">
                         <EmailButton />
-                        <NuxtLink to="#contact" class="header-link">
+                        <!-- <NuxtLink to="#contact" class="header-link">
                             <button>
                                 Continue reading
                             </button>
-                        </NuxtLink>
+                        </NuxtLink> -->
                     </div>
                 </section>
             </header>
-            <div class="main" id="contact" v-if="expanded">
-                <!-- <button :disabled="refreshing" @click="refreshAll">      Refetch All Data    </button> -->
+            <!-- <div class="main" id="contact" v-if="expanded">
                 <div class="markdown-box">
                     <ContentRenderer :value="data">      
                         <h1>{{ data.title }}</h1>
@@ -33,7 +32,7 @@
                         <p>{{ data.ending_description }}</p>
                     </ContentRenderer>
                 </div>
-            </div>
+            </div> -->
         </div>
     </Transition>
 </template>

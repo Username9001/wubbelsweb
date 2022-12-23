@@ -1,11 +1,11 @@
 ---
 head.title: WubbelsWeb
 description: 
-    "Interactive musical speaker with directional sound. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fugiat perspiciatis doloremque nostrum harum ex eius autem. Architecto voluptatem impedit magni obcaecati inventore expedita, molestias libero facilis similique? Expedita, delectus."
+    "Plant DB is an app that contains comprehensive information about plants and how to interplant them according to permaculture guilds. The app was developed using VueJS/NuxtJS, Bootstrap, SASS, Laravel, GraphQL, MongoDB, and Docker."
 further_description: 
-    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fugiat perspiciatis doloremque nostrum harum ex eius autem. Architecto voluptatem impedit magni obcaecati inventore expedita, molestias libero facilis similique? Expedita, delectus. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fugiat perspiciatis doloremque nostrum harum ex eius autem. Architecto voluptatem impedit magni obcaecati inventore expedita, molestias libero facilis similique? Expedita, delectus."
+    "It features a user-friendly interface and allows users to easily search for and access information about various plant species and their compatibility with other plants in permaculture guilds."
 ending_description: 
-    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fugiat perspiciatis doloremque nostrum harum ex eius autem. Architecto voluptatem impedit magni obcaecati inventore expedita, molestias libero facilis similique? Expedita, delectus. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fugiat perspiciatis doloremque nostrum harum ex eius autem. Architecto voluptatem impedit magni obcaecati inventore expedita, molestias libero facilis similique? Expedita, delectus."
+    "Plant DB is designed to help gardeners stimulate biodiversity in their gardens. By following the permaculture guild recommendations for interplanting, gardeners can create a diverse and sustainable ecosystem in their garden that supports a wide range of plant and animal life. The app's comprehensive plant information and permaculture guild recommendations make it an valuable resource for gardeners looking to create a diverse and sustainable garden ecosystem."
 link: https://tomstech.nl
 img: plantdb.jpg
 excerpt: Afrchitecto voluptatem impedit magni obcaecati inventore expedita, molestias libero facilis similique? Expedita, delectus.

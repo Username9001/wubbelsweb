@@ -3,7 +3,7 @@
         <div>
         <!-- {{ projectStore.getProjectById(5) }} -->
         <div :key="$route.params.slug" v-if="data">
-            <header v-if="$route.params.slug" class="header">
+            <header v-if="$route.params.slug && data.img" class="header">
                 <!-- SAMPLE IMAGE -->
                 <img :src="'/img/' + data.img" alt="Project Image" class="header-popout-image" />
                 <!-- <img :src="`${ data.image1 }`" alt="Project image" class="header-popout-image" /> -->
@@ -129,6 +129,10 @@ header {
         width: 100%;
         height: calc(80%);
         object-fit: contain;
+        @media (max-width: 480px) {
+            height: 80%;
+            object-fit: cover;
+        }
         // top: 50%;
         // left: 50%;
         // width: auto;
@@ -214,7 +218,7 @@ header {
         }
         @media (max-width: 480px) {
             margin: 0;
-            padding: 24px;
+            // padding: 24px;
             max-width: 100%;
             &:nth-of-type(2) {
             margin: 0;
@@ -303,6 +307,15 @@ header {
       }
 
       .end-buttons {
+        @media (max-width: 840px)  {
+            max-width: 75%;
+            margin: auto;
+        }
+        @media (max-width: 480px)  {
+            button {
+                max-width: 120px;
+            }
+        }
           .back-to-projects {
             margin: 0;
             // margin-top: -60px;

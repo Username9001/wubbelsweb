@@ -101,6 +101,9 @@ body, html {
   padding: 140px 0 0 0;
   background: $lightest-blue;
   @media (max-width: 840px) {
-    font-size: .6rem;
+    padding: 0;
+    .projects {
+      margin-top: 24px;
+    }
   }
 }

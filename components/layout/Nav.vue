@@ -58,12 +58,12 @@ export default {
                 padding: 0 48px;
                 @media(max-width: 840px) {
                     padding: 0 24px;
-                    font-size: 1rem;
+                    // font-size: 1rem;
                     // display: inline;
                 }
                 @media(max-width: 480px) {
                     padding: 12px;
-                    font-size: .7rem;
+                    // font-size: .7rem;
                     // display: inline;
                 }
                 a {

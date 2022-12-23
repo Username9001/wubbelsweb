@@ -1,11 +1,11 @@
 ---
 head.title: WubbelsWeb
 description: 
-    "Interactive musical speaker with directional sound. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fugiat perspiciatis doloremque nostrum harum ex eius autem. Architecto voluptatem impedit magni obcaecati inventore expedita, molestias libero facilis similique? Expedita, delectus."
+    "Pineapple Productions is a website/portfolio for a videographer/writer/presenter/producer and all-around content creator. The website was developed using Wordpress and SASS, and features a clean and modern design that showcases the content creator's work. The website includes information about the content creator and their services."
 further_description: 
-    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fugiat perspiciatis doloremque nostrum harum ex eius autem. Architecto voluptatem impedit magni obcaecati inventore expedita, molestias libero facilis similique? Expedita, delectus. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fugiat perspiciatis doloremque nostrum harum ex eius autem. Architecto voluptatem impedit magni obcaecati inventore expedita, molestias libero facilis similique? Expedita, delectus."
+    "The website was developed in close cooperation with the content creator, ensuring that it meets their needs and reflects their style and aesthetic. The website was built using the latest technologies and best practices, ensuring that it is reliable and scalable."
 ending_description: 
-    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fugiat perspiciatis doloremque nostrum harum ex eius autem. Architecto voluptatem impedit magni obcaecati inventore expedita, molestias libero facilis similique? Expedita, delectus. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fugiat perspiciatis doloremque nostrum harum ex eius autem. Architecto voluptatem impedit magni obcaecati inventore expedita, molestias libero facilis similique? Expedita, delectus."
+    "It was developed using Wordpress and SASS, and features a clean and modern design. The website was developed in close cooperation with the content creator and is user-friendly and easy to navigate."
 link: https://pp.wubbelsweb.com
 img: pineapple.jpg
 

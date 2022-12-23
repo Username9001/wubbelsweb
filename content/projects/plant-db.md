@@ -12,7 +12,7 @@ introduction: Architecto voluptatem impedit magni obcaecati inventore expedita, 
 ---
 # Plant DB
 ::project-slot
-Industrial Design project
+<!-- Industrial Design project -->
 
 #descriptionSlot
 Interactive musical speaker with directional sound.

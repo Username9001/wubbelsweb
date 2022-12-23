@@ -1,26 +1,26 @@
 ---
 head.title: WubbelsWeb
 description: 
-    "Interactive musical speaker with directional sound. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fugiat perspiciatis doloremque nostrum harum ex eius autem. Architecto voluptatem impedit magni obcaecati inventore expedita, molestias libero facilis similique? Expedita, delectus."
+    "A webspage for an internet privacy awareness campaign. The website was developed using Bootstrap and Vanilla JS, and features a clean and modern design that showcases the campaign's message and goals. The website includes information about the importance of internet privacy."
 further_description: 
-    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fugiat perspiciatis doloremque nostrum harum ex eius autem. Architecto voluptatem impedit magni obcaecati inventore expedita, molestias libero facilis similique? Expedita, delectus. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fugiat perspiciatis doloremque nostrum harum ex eius autem. Architecto voluptatem impedit magni obcaecati inventore expedita, molestias libero facilis similique? Expedita, delectus."
+    "The campaign aims to raise awareness about the importance of internet privacy and to provide tools and resources to help users protect their personal information online. The website serves as an important platform for the campaign, helping to spread its message and reach a wider audience. In summary, Bits of Freedom is a website for an internet privacy awareness campaign that includes information about the importance of internet privacy and resources for protecting personal information online."
 ending_description: 
-    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fugiat perspiciatis doloremque nostrum harum ex eius autem. Architecto voluptatem impedit magni obcaecati inventore expedita, molestias libero facilis similique? Expedita, delectus. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fugiat perspiciatis doloremque nostrum harum ex eius autem. Architecto voluptatem impedit magni obcaecati inventore expedita, molestias libero facilis similique? Expedita, delectus."
+    ""
 link: _
 subtitle: testtitle
-excerpt: Afrchitecto voluptatem impedit magni obcaecati inventore expedita, molestias libero facilis similique? Expedita, delectus.
+excerpt: Website for internet privacy awareness campaign with information and resources.
 introduction: Architecto voluptatem impedit magni obcaecati inventore expedita, molestias libero facilis similique? Expedita, delectus.
 ---
 # Bits of Freedom
 ::project-slot
-Afrchitecto voluptatem impedit magni obcaecati inventore expedita, molestias libero facilis similique? Expedita, delectus.
+<!-- Afrchitecto voluptatem impedit magni obcaecati inventore expedita, molestias libero facilis similique? Expedita, delectus. -->
 
 #subtitle
-tessssssssst
+<!-- tessssssssst -->
 
 #descriptionSlot
-Design and development for a anti privacy restrictions campaign.
+<!-- Website for internet privacy awareness campaign with information and resources. -->
 
 #excerpt
-Design and development for a anti privacy restrictions campaign.
+Website for internet privacy awareness campaign with information and resources.
 

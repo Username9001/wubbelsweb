@@ -17,30 +17,21 @@ export default defineNuxtConfig({
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         {
-          // development
-          // href: '/_nuxt/assets/fonts/Montserrat.ttf',
-          // production
-          // rel: 'preload',
           href: 'fonts/Montserrat.ttf',
           as: 'font',
           type: 'font/ttf',
-          // importance: 'high',
-          // crossorigin: 'anonymous',
-          // display: 'swap'
         },
         {
-          // development
-          // href: '/_nuxt/assets/fonts/Karrik-Regular.woff2',
-          // production
-          // rel: 'preload',
           href: 'fonts/Karrik-Regular.woff2',
           as: 'font',
           type: 'font/woff2',
-          // importance: 'high',
-          // crossorigin: 'anonymous',
-          // display: 'swap'
         },
-        // { rel: 'manifest', href: '/manifest.json' }
+        {
+          href: 'fonts/Courgette-Regular.ttf',
+          as: 'font',
+          type: 'font/ttf',
+        },
+        { rel: 'stylesheet', href: "https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&&display=swap" }
       ]
     },
     pageTransition: { name: 'page', mode: 'out-in' }

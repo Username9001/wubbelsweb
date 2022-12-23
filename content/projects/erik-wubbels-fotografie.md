@@ -12,10 +12,10 @@ introduction: Architecto voluptatem impedit magni obcaecati inventore expedita, 
 ---
 # Erik Wubbels Fotografie
 ::project-slot
-Industrial Design project
+<!-- Industrial Design project -->
 
-#descriptionSlot
-Interactive musical speaker with directional sound.
+#excerpt
+WooCommerce shop for printed photography.
 ::
 
 <!-- # Erik Wubbels Fotografie

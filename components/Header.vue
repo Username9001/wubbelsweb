@@ -80,7 +80,7 @@ header {
       p {
         font-size: 1.2rem;
         max-width: 50%;
-        font-family: 'Montserrat';
+        font-family: 'Manrope';
         @media (max-width: 840px) {
             max-width: 90%;
         }
@@ -89,7 +89,7 @@ header {
         }
         padding: 48px 0;
         &:nth-of-type(1) {
-            font-family: 'Montserrat';
+            // font-family: 'Manrope';
             color: $light-blue;
         }
         &:nth-of-type(2) {
@@ -120,7 +120,7 @@ header {
             height: 100%;
             border-radius: 5px;
             padding: 8px;
-            font-family: 'Montserrat';
+            font-family: 'Manrope';
           }
         }
       }

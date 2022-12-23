@@ -142,7 +142,7 @@ export default {
     opacity: 0.8;
     font-size: 3em;
     font-weight: 700;
-    font-family: 'Montserrat';
+    font-family: 'Manrope';
   }
   h4 {
     margin: 12px auto;
@@ -175,9 +175,8 @@ export default {
   // COUNTER
   h2.counter {
     font-size: 1.6rem;
-    margin-top: 24px;
     color: $grey;
-    margin: auto;
+    margin: 24px auto;
     width: $base-content-width;
     display: block;
     grid-column: span 2;

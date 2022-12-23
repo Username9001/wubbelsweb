@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&&display=swap');
+
+
 @font-face {
    font-family: "Montserrat";
    src: local("Montserrat"),
@@ -10,8 +13,17 @@
    font-family: "Karrik";
    src: local("Karrik"),
       // dev
-      url(http://192.168.1.25:3000/fonts/Karrik-Regular.woff2)format("truetype");
+      url(http://192.168.1.25:3000/fonts/Karrik-Regular.woff2) format("woff2");
       // prod
       // url(https://pftest.wubbelsweb.com/fonts/Karrik-Regular.woff2)format("truetype");
    font-display: swap;
 }
+
+// @font-face {
+//    font-family: "Manrope";
+//    src: local("Manrope"),
+//       // dev
+//       url(http://192.168.1.25:3000/fonts/Courgette-Regular.ttf) format("ttf");
+//    font-display: swap;
+// }
+

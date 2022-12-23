@@ -1,24 +1,24 @@
 ---
 head.title: WubbelsWeb
 description: 
-    "Interactive musical speaker with directional sound. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fugiat perspiciatis doloremque nostrum harum ex eius autem. Architecto voluptatem impedit magni obcaecati inventore expedita, molestias libero facilis similique? Expedita, delectus."
+    "Misty Fields 2022 is a website for a three-day music festival that takes place in a picturesque location surrounded by misty fields. The website was developed using Wordpress and SASS, and features a clean and modern design that showcases the lineup of performers, ticket information, and other details about the event."
 further_description: 
-    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fugiat perspiciatis doloremque nostrum harum ex eius autem. Architecto voluptatem impedit magni obcaecati inventore expedita, molestias libero facilis similique? Expedita, delectus. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fugiat perspiciatis doloremque nostrum harum ex eius autem. Architecto voluptatem impedit magni obcaecati inventore expedita, molestias libero facilis similique? Expedita, delectus."
+    "The website was created based on designs provided by a graphic designer, who had a specific vision for the look and feel of the site. The development team worked closely with the designer to ensure that the website matched the desired aesthetic and provided a smooth and intuitive user experience."
 ending_description: 
-    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fugiat perspiciatis doloremque nostrum harum ex eius autem. Architecto voluptatem impedit magni obcaecati inventore expedita, molestias libero facilis similique? Expedita, delectus. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fugiat perspiciatis doloremque nostrum harum ex eius autem. Architecto voluptatem impedit magni obcaecati inventore expedita, molestias libero facilis similique? Expedita, delectus."
-link: https://tomstech.nl
-excerpt: Afrchitecto voluptatem impedit magni obcaecati inventore expedita, molestias libero facilis similique? Expedita, delectus.
+    "In summary, Misty Fields 2022 is a professionally designed and developed website that serves as the online hub for a popular music festival. The site includes all the necessary information for attendees and helps to create excitement and anticipation for the event."
+link: https://mistyfields.com
+excerpt: "Misty Fields 2022 is a website for a three-day music festival featuring a clean and modern design. Developed using Wordpress and SASS, the site showcases the lineup of performers and provides all necessary information for attendees."
 introduction: Architecto voluptatem impedit magni obcaecati inventore expedita, molestias libero facilis similique? Expedita, delectus.
 ---
 # Misty Fields 2022
 ::project-slot
-Industrial Design project
+<!-- Industrial Design project -->
 
 #excerpt
-Web design and development for a music festival.
+A website for a three-day music festival developed using Wordpress and SCSS.
 
 #subtitle
-Interactive musical speaker with directional sound.
+<!-- Interactive musical speaker with directional sound. -->
 <!-- :: -->
 
 

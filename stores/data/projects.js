@@ -79,31 +79,31 @@ export const projects = [
       img: 'https://loremflickr.com/600/338'
     },
     // OTHER
-    {
-      id: 10,
-      isFav: false,
-      name: 'Holdie',
-      slug: 'holdie',
-      link: '',
-      stack: ['Arduino'],
-      img: 'https://loremflickr.com/600/338'
-    },
-    {
-      id: 11,
-      isFav: false,
-      name: 'Mugen',
-      slug: 'mugen',
-      link: '',
-      stack: ['Arduino'],
-      img: 'https://loremflickr.com/600/338'
-    },
-    {
-      id: 12,
-      isFav: false,
-      name: 'Flowerscape',
-      slug: 'flowerscape',
-      link: '',
-      stack: ['Processing'],
-      img: 'https://loremflickr.com/600/338'
-    },
+    // {
+    //   id: 10,
+    //   isFav: false,
+    //   name: 'Holdie',
+    //   slug: 'holdie',
+    //   link: '',
+    //   stack: ['Arduino'],
+    //   img: 'https://loremflickr.com/600/338'
+    // },
+    // {
+    //   id: 11,
+    //   isFav: false,
+    //   name: 'Mugen',
+    //   slug: 'mugen',
+    //   link: '',
+    //   stack: ['Arduino'],
+    //   img: 'https://loremflickr.com/600/338'
+    // },
+    // {
+    //   id: 12,
+    //   isFav: false,
+    //   name: 'Flowerscape',
+    //   slug: 'flowerscape',
+    //   link: '',
+    //   stack: ['Processing'],
+    //   img: 'https://loremflickr.com/600/338'
+    // },
   ]

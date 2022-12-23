@@ -38,6 +38,7 @@
                         <br>
                         <br>
                         <p> {{ data.description_4 }}</p>
+                        <div class="end-buttons">
                             <button class="to-website">
                                 <nuxt-link :to="data.link" target="_blank">
                                     Visit website
@@ -48,6 +49,7 @@
                                     Back to projects
                                 </nuxt-link>
                             </button>
+                        </div>
                     </ContentRenderer>
                 </div>
             </div>
@@ -277,28 +279,32 @@ header {
             height: 100%;
             border-radius: 5px;
             padding: 8px;
-            font-family: 'Montserrat';
+            font-family: 'Manrope';
           }
         }
       }
-      .back-to-projects {
-        margin: 0;
-        margin-top: -60px;
-        padding: 18px 24px;
-        bottom: 24px;
-        left: 0;
-        text-align: left;
-        justify-content: left;
-      }
-      .to-website {
-        margin-top: -60px;
-        padding: 18px 24px;
-        bottom: 24px;
-        text-align: right;
-        justify-content: right;
-        @media (max-width: 840px) {
-            margin-top: 0;
-        }
+
+      .end-buttons {
+          .back-to-projects {
+            margin: 0;
+            // margin-top: -60px;
+            padding: 18px 24px;
+            bottom: 24px;
+            left: 0;
+            text-align: left;
+            justify-content: left;
+          }
+          .to-website {
+            // margin-top: -60px;
+            float: right;
+            padding: 18px 24px;
+            bottom: 24px;
+            text-align: right;
+            justify-content: right;
+            @media (max-width: 840px) {
+                margin-top: 0;
+            }
+          }
       }
 }
 </style>

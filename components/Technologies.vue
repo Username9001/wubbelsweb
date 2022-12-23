@@ -85,7 +85,7 @@ export default {
     .tech-title {
       text-align: left;
       margin: 12px;
-      font-family: 'Montserrat';
+      font-family: 'Manrope';
       color: $light-blue;
     }
     .tech-list {

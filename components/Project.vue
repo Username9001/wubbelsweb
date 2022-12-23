@@ -28,6 +28,8 @@ export default {
 
 <style lang="scss">
 .project-item {
+  font-family: 'Manrope';
+  // font-weight: 700;
   display: block;
   position: relative;
   width: 100%;
@@ -35,8 +37,9 @@ export default {
   list-style-type: none;
   text-align: left;
   padding: 24px;
-  background: $grey;
+  background: $grey-gradient;
   color: white;
+  border-radius: 15px;
   // min-height: 320px;
   margin: 0;
   transition: .3s ease;
@@ -67,14 +70,15 @@ export default {
           margin: 0;
           padding-bottom: 12px;
           display: block;
-          font-family: 'Montserrat';
+          font-family: 'Manrope';
       }
       p {
-        font-family: 'Montserrat';
+        font-family: 'Manrope';
         max-width: 90%;
         opacity: 0.95;
       }
       .read-more-link {
+        border-radius: 10px;
         position: absolute;
         bottom: 0;
         height: auto;
@@ -94,7 +98,9 @@ export default {
         color: $grey;
         text-decoration: none;
         &:hover {
-            opacity: 0.5;
+            opacity: 0.8;
+            color: #fff;
+            background: $grey;
             transition: .5s ease-out;
             animation: AnimationName 3s infinite;
         }
@@ -109,6 +115,7 @@ export default {
     position: absolute;
     bottom: 0;
     left: 0;
+    border-radius: 0 0 15px 15px;
     img {
       height: auto;
     }

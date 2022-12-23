@@ -14,10 +14,10 @@ image1: http://192.168.1.25:3000/img/test.jpg
 ---
 # Misty Fields 2019
 ::project-slot
-Website for a festival
+<!-- Website for a festival -->
 
 #excerpt
-Web design and development for a music festival.
+A website for a three-day music festival developed using Wordpress and SCSS.
 
 #description
-Interactive musical speaker with directional sound.
+<!-- Interactive musical speaker with directional sound. -->

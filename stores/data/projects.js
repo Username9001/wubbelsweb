@@ -31,7 +31,7 @@ export const projects = [
       isFav: false,
       name: 'Pineapple Productions',
       slug: 'pineapple-productions',
-      link: 'https://pp.wubbelsweb.com',
+      // link: 'https://pp.wubbelsweb.com',
       stack: ['Wordpress', 'SASS'],
       img: 'pineapple.jpg'
     },
@@ -40,7 +40,7 @@ export const projects = [
       isFav: true,
       name: 'Bootleg Breathing',
       slug: 'bootleg-breathing',
-      link: 'https://bb.wubbelsweb.com',
+      // link: 'https://bb.wubbelsweb.com',
       stack: ['VueJS/NuxtJS', 'Bootstrap', 'SASS'],
       img: 'bootleg.jpg'
     },
@@ -49,7 +49,7 @@ export const projects = [
       isFav: true,
       name: 'Plant DB',
       slug: 'plant-db',
-      link: 'https://plantnet.wubbelsweb.com/species',
+      // link: 'https://plantnet.wubbelsweb.com/species',
       stack: ['VueJS/NuxtJS', 'Bootstrap', 'SASS', 'Laravel', 'GraphQL', 'MongoDB', 'Docker'],
       img: 'plantdb.jpg'
     },

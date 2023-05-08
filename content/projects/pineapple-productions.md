@@ -6,7 +6,7 @@ further_description:
     "The website was developed in close cooperation with the content creator, ensuring that it meets their needs and reflects their style and aesthetic. The website was built using the latest technologies and best practices, ensuring that it is reliable and scalable."
 ending_description: 
     "It was developed using Wordpress and SASS, and features a clean and modern design. The website was developed in close cooperation with the content creator and is user-friendly and easy to navigate."
-link: https://pp.wubbelsweb.com
+# link: https://pp.wubbelsweb.com
 img: pineapple.jpg
 
 excerpt: Afrchitecto voluptatem impedit magni obcaecati inventore expedita, molestias libero facilis similique? Expedita, delectus.

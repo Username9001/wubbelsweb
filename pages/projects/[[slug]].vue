@@ -5,7 +5,9 @@
         <div :key="$route.params.slug" v-if="data">
             <header v-if="$route.params.slug && data.img" class="header">
                 <!-- SAMPLE IMAGE -->
-                <img :src="'/img/' + data.img" alt="Project Image" class="header-popout-image" />
+                <a :href=data.link>
+                    <img :src="'/img/' + data.img" alt="Project Image" class="header-popout-image" />
+                </a>
                 <!-- <img :src="`${ data.image1 }`" alt="Project image" class="header-popout-image" /> -->
                 <!-- TEXT HEADER -->
                 <section class="text-box">
